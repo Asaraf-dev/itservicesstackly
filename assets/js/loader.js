@@ -1,120 +1,115 @@
-/*--- Wait Components ---*/
+/*--- SITE LOADER ---*/
+
+(() => {
+
+let loader = null;
+
+/*--- Get Loader ---*/
+
+function getLoader(){
+
+    loader = document.querySelector(".site-loader");
+
+    return loader;
+
+}
+
+/*--- Show Loader ---*/
+
+function showLoader(){
+
+    const loader = getLoader();
+
+    if(!loader) return;
+
+    loader.classList.remove("site-loader-hide");
+
+}
+
+/*--- Hide Loader ---*/
+
+function hideLoader(){
+
+    const loader = getLoader();
+
+    if(!loader) return;
+
+    requestAnimationFrame(() => {
+
+        setTimeout(() => {
+
+            loader.classList.add("site-loader-hide");
+
+        },300);
+
+    });
+
+}
+
+/*--- Components Loaded ---*/
 
 document.addEventListener("componentsLoaded", () => {
 
-    const loader = document.querySelector(".site-loader");
+    showLoader();
 
-    const progressBar = document.querySelector(".site-loader-progress-bar span");
+    requestAnimationFrame(() => {
 
-    const percent = document.querySelector(".site-loader-percent");
+        hideLoader();
 
-    const status = document.querySelector(".site-loader-status");
-
-    if (!loader || !progressBar || !percent || !status) {
-        return;
-    }
-
-    const messages = [
-
-        "Initializing Experience...",
-
-        "Loading Assets...",
-
-        "Preparing Interface...",
-
-        "Optimizing Performance...",
-
-        "Launching Website..."
-
-    ];
-
-    let progress = 0;
-
-    const timer = setInterval(() => {
-
-        progress++;
-
-        progressBar.style.width = progress + "%";
-
-        percent.innerHTML = progress + "%";
-
-        if (progress < 20) {
-
-            status.innerHTML = messages[0];
-
-        }
-
-        else if (progress < 45) {
-
-            status.innerHTML = messages[1];
-
-        }
-
-        else if (progress < 70) {
-
-            status.innerHTML = messages[2];
-
-        }
-
-        else if (progress < 90) {
-
-            status.innerHTML = messages[3];
-
-        }
-
-        else {
-
-            status.innerHTML = messages[4];
-
-        }
-
-        if (progress >= 100) {
-
-            clearInterval(timer);
-
-            setTimeout(() => {
-
-                loader.classList.add("site-loader-hide");
-
-            }, 400);
-
-        }
-
-    }, 18);
+    });
 
 });
 
-/*--- Page Transition Loader ---*/
+/*--- Page Transition ---*/
 
-document.addEventListener("click", function (e) {
+document.addEventListener("click",(e)=>{
 
     const link = e.target.closest("a");
 
-    if (!link) return;
+    if(!link) return;
 
     const href = link.getAttribute("href");
 
-    if (
+    if(
         !href ||
         href.startsWith("#") ||
         href.startsWith("mailto:") ||
         href.startsWith("tel:") ||
         href.startsWith("javascript:") ||
-        link.target == "_blank"
-    ) {
+        href.startsWith("http") ||
+        link.target === "_blank"
+    ){
         return;
     }
 
     e.preventDefault();
 
-    const loader = document.querySelector(".site-loader");
+    showLoader();
 
-    loader.classList.remove("site-loader-hide");
+    document.body.classList.add("page-transition");
 
-    setTimeout(() => {
+    setTimeout(()=>{
 
         window.location.href = href;
 
-    }, 350);
+    },350);
 
 });
+
+/*--- Browser Back / Forward ---*/
+
+window.addEventListener("pageshow",()=>{
+
+    hideLoader();
+
+});
+
+/*--- Restore Loader State ---*/
+
+window.addEventListener("beforeunload",()=>{
+
+    showLoader();
+
+});
+
+})();

@@ -1,36 +1,43 @@
 /*--- Load Component ---*/
 
-async function loadComponent(id,file){
+async function loadComponent(id, file) {
 
-const response=await fetch(file);
+    const response = await fetch(file);
 
-const html=await response.text();
+    const html = await response.text();
 
-document.getElementById(id).innerHTML=html;
+    document.getElementById(id).innerHTML = html;
 
 }
 
 /*--- Initialize Website ---*/
 
-async function initWebsite(){
+async function initWebsite() {
 
-await Promise.all([
+    try {
 
-loadComponent("loader","assets/components/loader.html"),
+        await Promise.all([
 
-loadComponent("navbar","assets/components/navbar.html"),
+            loadComponent("loader", "assets/components/loader.html"),
 
-loadComponent("footer","assets/components/footer.html")
+            loadComponent("navbar", "assets/components/navbar.html"),
 
-]);
+            loadComponent("footer", "assets/components/footer.html")
 
-document.dispatchEvent(
+        ]);
 
-new Event("componentsLoaded")
+        requestAnimationFrame(() => {
 
-);
+            document.dispatchEvent(new Event("componentsLoaded"));
+
+        });
+
+    } catch (error) {
+
+        console.error("Component loading failed:", error);
+
+    }
 
 }
 
-initWebsite();
-
+document.addEventListener("DOMContentLoaded", initWebsite);
