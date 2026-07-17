@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Service | Admin </title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Main favicon -->
+    <link rel="icon" href="favicon.ico">
+    <!-- PNG favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+    <!-- Apple -->
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+    <!-- Android -->
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/images/android-chrome-512x512.png">
+    <!-- Manifest -->
+    <link rel="manifest" href="assets/images/site.webmanifest">
+    <!--- Icon Code --->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/panel.css">
+    <link rel="stylesheet" href="assets/css/loader.css">
+
+</head>
+
+<body class="panel-body">
+
+    <!---- Sidebar ---->
+
+    <aside class="panel-sidebar">
+        <div class="panel-logo">
+           <a href="index.html"> <img src="assets/images/barnd-logo.png" alt="Logo"> </a>
+        </div>
+
+        <ul class="panel-menu">
+
+            <li><a href="admin-dashboard.html"><i class="bi bi-grid-fill"></i><span>Overview</span></a></li>
+            <li><a href="admin-clients.html"><i class="bi bi-people-fill"></i><span>Clients</span></a></li>
+            <li><a href="admin-projects.html"><i class="bi bi-kanban-fill"></i><span>Projects</span></a></li>
+            <li><a href="admin-messages.html"><i class="bi bi-envelope-fill"></i><span>Messages</span></a></li>
+            <li><a href="admin-users.html"><i class="bi bi-person-badge-fill"></i><span>Users</span></a></li>
+            <li><a href="admin-settings.html"><i class="bi bi-gear-fill"></i><span>Settings</span></a></li>
+
+        </ul>
+
+        <div class="panel-sidebar-footer">
+
+            <a href="login.html"><i class="bi bi-box-arrow-right"></i><span>Logout</span></a>
+
+        </div>
+
+    </aside>
+
+    <!---- Main ----->
+
+    <div class="panel-main">
+
+        <!--- Top Navbar --->
+
+        <header class="panel-navbar">
+
+            <div class="panel-navbar-left">
+
+                <button class="panel-sidebar-toggle"><i class="bi bi-list"></i></button>
+
+                <div class="panel-search">
+
+                    <i class="bi bi-search"></i>
+                    <input type="text" placeholder="Search here...">
+
+                </div>
+
+            </div>
+
+            <div class="panel-navbar-right">
+                <button class="panel-icon-btn"><i class="bi bi-bell-fill"></i><span class="panel-dot"></span></button>
+                <div class="panel-profile">
+                   <a href="admin-settings.html"><img src="https://i.pinimg.com/736x/f1/2f/37/f12f37a580349c171e0cb7ff6f3e8331.jpg" alt="Admin"> </a>
+                    <div>
+                        <h6>Administrator</h6>
+                        <p>Super Admin</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!--- Content ---->
+
+        <main class="panel-content">
+
+            <!-- Welcome -->
+
+            <div class="panel-welcome">
+
+                <div>
+
+                    <span>Welcome Back </span>
+                    <h2>Dashboard Overview</h2>
+                    <p>Here's what's happening across your business today.</p>
+
+                </div>
+
+                <button class="panel-primary-btn"><i class="bi bi-plus-circle-fill"></i>New Project</button>
+
+            </div>
+
+            <!-- Statistics -->
+
+            <div class="row g-4">
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="panel-stat-card">
+
+                        <div class="panel-stat-icon">
+                            <i class="bi bi-kanban-fill"></i>
+                        </div>
+
+                        <h3 class="panel-counter" data-target="156">0</h3>
+                        <p>Projects</p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="panel-stat-card">
+
+                        <div class="panel-stat-icon">
+                            <i class="bi bi-people-fill"></i>
+                        </div>
+
+                        <h3 class="panel-counter" data-target="84">0</h3>
+                        <p>Clients</p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="panel-stat-card">
+
+                        <div class="panel-stat-icon">
+                            <i class="bi bi-currency-rupee"></i>
+                        </div>
+
+                        <h3 class="panel-counter" data-target="28">0</h3>
+                        <p>Revenue (Lakhs)</p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+
+                    <div class="panel-stat-card">
+
+                        <div class="panel-stat-icon">
+                            <i class="bi bi-envelope-fill"></i>
+                        </div>
+
+                        <h3 class="panel-counter" data-target="12">0</h3>
+                        <p>Messages</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!--- Analytics & Activity --->
+
+            <div class="row g-4 mt-1">
+
+                <!--- Revenue Analytics --->
+
+                <div class="col-xl-8">
+
+                    <div class="panel-card">
+
+                        <div class="panel-card-header">
+
+                            <div>
+
+                                <span class="panel-card-subtitle">
+
+                                    Analytics
+
+                                </span>
+
+                                <h4>
+
+                                    Revenue Analytics
+
+                                </h4>
+
+                            </div>
+
+                            <select class="panel-select">
+
+                                <option>This Year</option>
+
+                                <option>Last Year</option>
+
+                                <option>Last 6 Months</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="panel-chart">
+
+                            <canvas id="revenueChart"></canvas>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!--- Recent Activity --->
+
+                <div class="col-xl-4">
+
+                    <div class="panel-card">
+
+                        <div class="panel-card-header">
+
+                            <div>
+
+                                <span class="panel-card-subtitle">
+
+                                    Timeline
+
+                                </span>
+
+                                <h4>
+
+                                    Recent Activity
+
+                                </h4>
+
+                            </div>
+
+                        </div>
+
+                        <div class="panel-activity">
+
+                            <!--- Item --->
+
+                            <div class="panel-activity-item">
+
+                                <div class="panel-activity-icon">
+
+                                    <i class="bi bi-person-plus-fill"></i>
+
+                                </div>
+
+                                <div class="panel-activity-content">
+
+                                    <h6>
+
+                                        New Client Registered
+
+                                    </h6>
+
+                                    <p>
+
+                                        John Anderson joined your platform.
+
+                                    </p>
+
+                                    <span>
+
+                                        5 Minutes Ago
+
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                            <!--- Item --->
+
+                            <div class="panel-activity-item">
+
+                                <div class="panel-activity-icon">
+
+                                    <i class="bi bi-kanban-fill"></i>
+
+                                </div>
+
+                                <div class="panel-activity-content">
+
+                                    <h6>
+
+                                        Project Completed
+
+                                    </h6>
+
+                                    <p>
+
+                                        Restaurant Website delivered successfully.
+
+                                    </p>
+
+                                    <span>
+
+                                        42 Minutes Ago
+
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                            <!--- Item --->
+
+                            <div class="panel-activity-item">
+
+                                <div class="panel-activity-icon">
+
+                                    <i class="bi bi-shield-check"></i>
+
+                                </div>
+
+                                <div class="panel-activity-content">
+
+                                    <h6>
+
+                                        System Backup Completed
+
+                                    </h6>
+
+                                    <p>
+
+                                        Daily backup completed successfully.
+
+                                    </p>
+
+                                    <span>
+
+                                        Yesterday • 11:30 PM
+
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/panel.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Service | Register</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Main favicon -->
+    <link rel="icon" href="favicon.ico">
+
+    <!-- PNG favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+
+    <!-- Apple -->
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+
+    <!-- Android -->
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/images/android-chrome-512x512.png">
+
+    <!-- Manifest -->
+    <link rel="manifest" href="assets/images/site.webmanifest">
+
+    <!--- Icon Code --->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="assets/css/auth.css">
+
+    <link rel="stylesheet" href="assets/css/loader.css">
+
+</head>
+
+<body>
+
+    <!--- Register Section --->
+
+    <!--- Register Section --->
+
+    <section class="login-section">
+
+        <div class="container-fluid">
+
+            <div class="row g-0 min-vh-100 align-items-center justify-content-center">
+
+                <div class="col-12 col-lg-5 col-xl-4">
+
+                    <div class="login-card register-card">
+
+                        <!--- Logo --->
+
+                        <div class="login-logo">
+
+                            <a href="index.html"><img src="assets/images/barnd-logo.png" alt="Logo"></a>
+
+                        </div>
+
+                        <!--- Header --->
+
+                        <div class="login-header">
+
+                            <span class="login-badge">
+
+                                <i class="bi bi-person-plus-fill"></i>
+
+                                Secure Registration
+
+                            </span>
+
+                            <h1 class="login-title">
+
+                                Create Your Account
+
+                            </h1>
+
+                            <p class="login-description">
+
+                                Join our platform to access secure tools, manage projects, collaborate efficiently, and
+                                experience powerful business solutions.
+
+                            </p>
+
+                        </div>
+
+                        <!--- Role Switch --->
+
+                        <div class="login-role-switch">
+
+                            <input type="radio" class="btn-check" name="loginRole" id="clientRole" checked>
+
+                            <label class="login-role-btn" for="clientRole">
+
+                                <i class="bi bi-person-fill"></i>
+
+                                <span>Client</span>
+
+                            </label>
+
+                            <input type="radio" class="btn-check" name="loginRole" id="adminRole">
+
+                            <label class="login-role-btn" for="adminRole">
+
+                                <i class="bi bi-shield-lock-fill"></i>
+
+                                <span>Admin</span>
+
+                            </label>
+
+                            <div class="login-role-slider"></div>
+
+                        </div>
+
+                        <!--- Register Form --->
+
+                        <form class="login-form">
+
+                            <!--- Full Name --->
+
+                            <div class="login-input-group">
+
+                                <label>
+
+                                    Full Name
+
+                                </label>
+
+                                <div class="login-input-wrapper">
+
+                                    <i class="bi bi-person-vcard"></i>
+
+                                    <input type="text" class="form-control" placeholder="Enter your full name" required>
+
+                                </div>
+
+                            </div>
+
+                            <!--- Username --->
+
+                            <div class="login-input-group">
+
+                                <label>
+
+                                    Username
+
+                                </label>
+
+                                <div class="login-input-wrapper">
+
+                                    <i class="bi bi-person"></i>
+
+                                    <input type="text" class="form-control" placeholder="Choose a username" required>
+
+                                </div>
+
+                            </div>
+
+                            <!--- Email --->
+
+                            <div class="login-input-group">
+
+                                <label>
+
+                                    Email Address
+
+                                </label>
+
+                                <div class="login-input-wrapper">
+
+                                    <i class="bi bi-envelope"></i>
+
+                                    <input type="email" class="form-control" placeholder="Enter your email" required>
+
+                                </div>
+
+                            </div>
+
+                            <!--- Phone --->
+
+                            <div class="login-input-group">
+
+                                <label>
+
+                                    Phone Number
+
+                                </label>
+
+                                <div class="login-input-wrapper">
+
+                                    <i class="bi bi-telephone"></i>
+
+                                    <input type="tel" class="form-control" placeholder="Enter your phone number"
+                                        required>
+
+                                </div>
+
+                            </div>
+
+                            <!--- Password --->
+
+                            <div class="login-input-group">
+
+                                <label>
+
+                                    Password
+
+                                </label>
+
+                                <div class="login-input-wrapper">
+
+                                    <i class="bi bi-lock"></i>
+
+                                    <input type="password" id="loginPassword" class="form-control"
+                                        placeholder="Create a password" required>
+
+                                    <button type="button" class="login-password-toggle">
+
+                                        <i class="bi bi-eye"></i>
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                            <!--- Confirm Password --->
+
+                            <div class="login-input-group">
+
+                                <label>
+
+                                    Confirm Password
+
+                                </label>
+
+                                <div class="login-input-wrapper">
+
+                                    <i class="bi bi-shield-lock"></i>
+
+                                    <input type="password" id="confirmPassword" class="form-control"
+                                        placeholder="Confirm your password" required>
+
+                                    <button type="button" class="login-confirm-password-toggle">
+
+                                        <i class="bi bi-eye"></i>
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                            <!--- Terms --->
+
+                            <div class="login-options">
+
+                                <div class="form-check">
+
+                                    <input class="form-check-input" type="checkbox" id="terms" required>
+
+                                    <label class="form-check-label" for="terms">
+
+                                        I agree to the
+
+                                        <a href="#">
+
+                                            Terms & Conditions
+
+                                        </a>
+
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+                            <!--- Register Button --->
+
+                            <button type="submit" class="login-btn">
+
+                                <i class="bi bi-person-plus-fill"></i>
+
+                                Create Account
+
+                            </button>
+
+                        </form>
+
+                        <!--- Bottom Links --->
+
+                        <div class="login-links">
+
+                            <p>
+
+                                Already have an account?
+
+                                <a href="login.html">
+
+                                    Sign In
+
+                                </a>
+
+                            </p>
+
+                        </div>
+
+                        <!--- Footer --->
+
+                        <div class="login-footer">
+
+                            © 2026 The Stackly. All Rights Reserved.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!--- Register Section End --->
+
+    <!--- Register Section End --->
+
+    <!--- Register Success Modal --->
+
+    <div class="modal fade" id="registerSuccessModal" tabindex="-1">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content register-success-modal">
+
+                <div class="modal-body text-center">
+
+                    <div class="register-success-icon">
+
+                        <i class="bi bi-check-circle-fill"></i>
+
+                    </div>
+
+                    <h3>
+
+                        Registration Successful!
+
+                    </h3>
+
+                    <p>
+
+                        Your account has been created successfully.
+
+                        You can now sign in using your username and password.
+
+                    </p>
+
+                    <button type="button" class="register-success-btn" id="registerSuccessBtn">
+
+                        Go To Login
+
+                        <i class="bi bi-arrow-right"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/auth.js"></script>
+
+</body>
+
+</html>

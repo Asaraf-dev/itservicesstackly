@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Service | Admin </title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Main favicon -->
+    <link rel="icon" href="favicon.ico">
+    <!-- PNG favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+    <!-- Apple -->
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+    <!-- Android -->
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/images/android-chrome-512x512.png">
+    <!-- Manifest -->
+    <link rel="manifest" href="assets/images/site.webmanifest">
+    <!--- Icon Code --->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/panel.css">
+    <link rel="stylesheet" href="assets/css/loader.css">
+
+</head>
+
+<body class="panel-body">
+
+    <!---- Sidebar ---->
+
+    <aside class="panel-sidebar">
+        <div class="panel-logo">
+             <a href="index.html"> <img src="assets/images/barnd-logo.png" alt="Logo"> </a>
+        </div>
+
+        <ul class="panel-menu">
+
+            <li><a href="admin-dashboard.html"><i class="bi bi-grid-fill"></i><span>Overview</span></a></li>
+            <li><a href="admin-clients.html"><i class="bi bi-people-fill"></i><span>Clients</span></a></li>
+            <li><a href="admin-projects.html"><i class="bi bi-kanban-fill"></i><span>Projects</span></a></li>
+            <li><a href="admin-messages.html"><i class="bi bi-envelope-fill"></i><span>Messages</span></a></li>
+            <li><a href="admin-users.html"><i class="bi bi-person-badge-fill"></i><span>Users</span></a></li>
+            <li><a href="admin-settings.html"><i class="bi bi-gear-fill"></i><span>Settings</span></a></li>
+
+        </ul>
+
+        <div class="panel-sidebar-footer">
+
+            <a href="login.html"><i class="bi bi-box-arrow-right"></i><span>Logout</span></a>
+
+        </div>
+
+    </aside>
+
+    <!---- Main ----->
+
+    <div class="panel-main">
+
+        <!--- Top Navbar --->
+
+        <header class="panel-navbar">
+
+            <div class="panel-navbar-left">
+
+                <button class="panel-sidebar-toggle"><i class="bi bi-list"></i></button>
+
+                <div class="panel-search">
+
+                    <i class="bi bi-search"></i>
+                    <input type="text" placeholder="Search here...">
+
+                </div>
+
+            </div>
+
+            <div class="panel-navbar-right">
+                <button class="panel-icon-btn"><i class="bi bi-bell-fill"></i><span class="panel-dot"></span></button>
+                <div class="panel-profile">
+                   <a href="admin-settings.html"><img src="https://i.pinimg.com/736x/f1/2f/37/f12f37a580349c171e0cb7ff6f3e8331.jpg" alt="Admin"> </a>
+                    <div>
+                        <h6>Administrator</h6>
+                        <p>Super Admin</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!--- Content ---->
+
+        <main class="panel-content">
+
+            <!--- Settings Page Header --->
+
+            <div class="panel-page-header">
+
+                <div class="panel-page-info">
+
+                    <span class="panel-page-subtitle">
+
+                        Administration
+
+                    </span>
+
+                    <h2>
+
+                        Settings
+
+                    </h2>
+
+                    <p>
+
+                        Configure your application preferences, security options, notifications, and system settings
+                        from one centralized dashboard.
+
+                    </p>
+
+                </div>
+
+                <div class="panel-page-action">
+
+                    <button class="panel-primary-btn">
+
+                        <i class="bi bi-floppy-fill"></i>
+
+                        Save Changes
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!--- Settings Quick Actions --->
+
+            <div class="panel-toolbar">
+
+                <div class="panel-toolbar-left">
+
+                    <div class="panel-search-box">
+
+                        <i class="bi bi-search"></i>
+
+                        <input type="text" id="settingsSearch" placeholder="Search settings...">
+
+                    </div>
+
+                </div>
+
+                <div class="panel-toolbar-right">
+
+                    <button class="panel-outline-btn">
+
+                        <i class="bi bi-arrow-clockwise"></i>
+
+                        Reset
+
+                    </button>
+
+                    <button class="panel-outline-btn">
+
+                        <i class="bi bi-download"></i>
+
+                        Export Settings
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!--- Settings Grid --->
+
+            <div class="panel-settings-grid">
+
+                <!--- Profile Settings --->
+
+                <div class="panel-settings-card">
+
+                    <div class="panel-settings-header">
+
+                        <div class="panel-settings-title">
+
+                            <div class="panel-settings-icon">
+
+                                <i class="bi bi-person-fill"></i>
+
+                            </div>
+
+                            <div>
+
+                                <h4>Profile Settings</h4>
+
+                                <p>Update your organization information.</p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="panel-settings-body">
+
+                        <div class="row g-4">
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+
+                                    Company Name
+
+                                </label>
+
+                                <input type="text" class="form-control panel-input"
+                                    placeholder="Helios Business Solutions">
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+
+                                    Administrator Name
+
+                                </label>
+
+                                <input type="text" class="form-control panel-input" placeholder="Mohammed Asaraf">
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+
+                                    Email Address
+
+                                </label>
+
+                                <input type="email" class="form-control panel-input" placeholder="admin@company.com">
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+
+                                    Phone Number
+
+                                </label>
+
+                                <input type="tel" class="form-control panel-input" placeholder="+91 98765 43210">
+
+                            </div>
+
+                            <div class="col-12">
+
+                                <label class="form-label">
+
+                                    Website URL
+
+                                </label>
+
+                                <input type="url" class="form-control panel-input"
+                                    placeholder="https://www.company.com">
+
+                            </div>
+
+                            <div class="col-12">
+
+                                <label class="form-label">
+
+                                    Company Logo
+
+                                </label>
+
+                                <input type="file" class="form-control panel-input">
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!--- Security Settings --->
+
+                <div class="panel-settings-card">
+
+                    <div class="panel-settings-header">
+
+                        <div class="panel-settings-title">
+
+                            <div class="panel-settings-icon">
+
+                                <i class="bi bi-shield-lock-fill"></i>
+
+                            </div>
+
+                            <div>
+
+                                <h4>Security Settings</h4>
+
+                                <p>Manage account security and authentication.</p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="panel-settings-body">
+
+                        <div class="row g-4">
+
+                            <div class="col-12">
+
+                                <label class="form-label">
+
+                                    Current Password
+
+                                </label>
+
+                                <div class="input-group">
+
+                                    <input type="password" class="form-control panel-input panel-password"
+                                        placeholder="Enter current password">
+
+                                    <button class="btn panel-password-toggle" type="button">
+
+                                        <i class="bi bi-eye"></i>
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-12">
+
+                                <label class="form-label">
+
+                                    New Password
+
+                                </label>
+
+                                <div class="input-group">
+
+                                    <input type="password" class="form-control panel-input panel-password"
+                                        placeholder="Enter new password">
+
+                                    <button class="btn panel-password-toggle" type="button">
+
+                                        <i class="bi bi-eye"></i>
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-12">
+
+                                <label class="form-label">
+
+                                    Confirm Password
+
+                                </label>
+
+                                <div class="input-group">
+
+                                    <input type="password" class="form-control panel-input panel-password"
+                                        placeholder="Confirm new password">
+
+                                    <button class="btn panel-password-toggle" type="button">
+
+                                        <i class="bi bi-eye"></i>
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-12">
+
+                                <div class="panel-switch-item">
+
+                                    <div class="panel-switch-text">
+
+                                        <h6>Enable Two-Factor Authentication</h6>
+
+                                    </div>
+
+                                    <div class="form-check form-switch m-0">
+
+                                        <input class="form-check-input" type="checkbox" id="emailNotification" checked>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-12">
+
+                                <label class="form-label">
+
+                                    Auto Logout
+
+                                </label>
+
+                                <select class="form-select panel-input">
+
+                                    <option>15 Minutes</option>
+                                    <option>30 Minutes</option>
+                                    <option selected>1 Hour</option>
+                                    <option>2 Hours</option>
+                                    <option>Never</option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!--- Settings Grid --->
+
+            <div class="panel-settings-grid">
+
+                <!--- Appearance Settings --->
+
+                <div class="panel-settings-card">
+
+                    <div class="panel-settings-header">
+
+                        <div class="panel-settings-title">
+
+                            <div class="panel-settings-icon">
+
+                                <i class="bi bi-palette-fill"></i>
+
+                            </div>
+
+                            <div>
+
+                                <h4>Appearance Settings</h4>
+
+                                <p>Customize the look and feel of your dashboard.</p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="panel-settings-body">
+
+                        <div class="row g-4">
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+
+                                    Theme
+
+                                </label>
+
+                                <select class="form-select panel-input">
+
+                                    <option selected>Dark</option>
+                                    <option>Light</option>
+                                    <option>System Default</option>
+
+                                </select>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+
+                                    Sidebar Style
+
+                                </label>
+
+                                <select class="form-select panel-input">
+
+                                    <option selected>Expanded</option>
+                                    <option>Collapsed</option>
+                                    <option>Mini Sidebar</option>
+
+                                </select>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+
+                                    Primary Color
+
+                                </label>
+
+                                <input type="color" class="form-control form-control-color panel-color-picker"
+                                    value="#2563EB">
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+
+                                    Font Size
+
+                                </label>
+
+                                <select class="form-select panel-input">
+
+                                    <option>Small</option>
+                                    <option selected>Medium</option>
+                                    <option>Large</option>
+
+                                </select>
+
+                            </div>
+
+                            <div class="col-12">
+
+                                <div class="panel-switch-item">
+
+                                    <div class="panel-switch-text">
+
+                                        <h6> Fixed Sidebar</h6>
+
+                                    </div>
+
+                                    <div class="form-check form-switch m-0">
+
+                                        <input class="form-check-input" type="checkbox" id="emailNotification" checked>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="panel-switch-item">
+
+                                    <div class="panel-switch-text">
+
+                                        <h6>  Compact Dashboard Mode</h6>
+
+                                    </div>
+
+                                    <div class="form-check form-switch m-0">
+
+                                        <input class="form-check-input" type="checkbox" id="emailNotification" checked>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!--- Notification Settings --->
+
+                <div class="panel-settings-card">
+
+                    <div class="panel-settings-header">
+
+                        <div class="panel-settings-title">
+
+                            <div class="panel-settings-icon">
+
+                                <i class="bi bi-bell-fill"></i>
+
+                            </div>
+
+                            <div>
+
+                                <h4>Notification Settings</h4>
+
+                                <p>Choose how you receive important updates.</p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="panel-settings-body">
+
+                        <div class="row g-4">
+
+                            <div class="col-12">
+
+                                <div class="panel-switch-item">
+
+                                    <div class="panel-switch-text">
+
+                                        <h6>Email Notifications</h6>
+
+                                        <p>Receive important updates through email.</p>
+
+                                    </div>
+
+                                    <div class="form-check form-switch m-0">
+
+                                        <input class="form-check-input" type="checkbox" id="emailNotification" checked>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-12">
+
+                                <div class="panel-switch-item">
+
+                                    <div class="panel-switch-text">
+
+                                        <h6>Browser Notifications</h6>
+                                        <p>Receive important updates through Browser.</p>
+
+                                    </div>
+
+                                    <div class="form-check form-switch m-0">
+
+                                        <input class="form-check-input" type="checkbox" id="emailNotification" checked>
+
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
+
+                            <div class="col-12">
+
+                                <div class="panel-switch-item">
+
+                                    <div class="panel-switch-text">
+
+                                        <h6>SMS Notifications</h6>
+                                        <p>Receive important updates through SMS.</p>
+
+                                    </div>
+
+                                    <div class="form-check form-switch m-0">
+
+                                        <input class="form-check-input" type="checkbox" id="emailNotification" checked>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-12">
+
+                                <div class="panel-switch-item">
+
+                                    <div class="panel-switch-text">
+
+                                        <h6>Marketing & Promotional Emails</h6>
+                                        <p>Receive Markeing updates through Email.</p>
+
+                                    </div>
+
+                                    <div class="form-check form-switch m-0">
+
+                                        <input class="form-check-input" type="checkbox" id="emailNotification" checked>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-12">
+
+                                <label class="form-label">
+
+                                    Notification Frequency
+
+                                </label>
+
+                                <select class="form-select panel-input">
+
+                                    <option>Instant</option>
+                                    <option selected>Every Hour</option>
+                                    <option>Daily Summary</option>
+                                    <option>Weekly Summary</option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!--- Settings Grid --->
+
+            <div class="panel-settings-grid">
+
+                <!--- Email Settings --->
+
+                <div class="panel-settings-card">
+
+                    <div class="panel-settings-header">
+
+                        <div class="panel-settings-title">
+
+                            <div class="panel-settings-icon">
+
+                                <i class="bi bi-envelope-fill"></i>
+
+                            </div>
+
+                            <div>
+
+                                <h4>Email Configuration</h4>
+
+                                <p>Configure your outgoing SMTP mail server.</p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="panel-settings-body">
+
+                        <div class="row g-4">
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+
+                                    SMTP Host
+
+                                </label>
+
+                                <input type="text" class="form-control panel-input" placeholder="smtp.gmail.com">
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+
+                                    SMTP Port
+
+                                </label>
+
+                                <input type="number" class="form-control panel-input" placeholder="587">
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+
+                                    Username
+
+                                </label>
+
+                                <input type="email" class="form-control panel-input" placeholder="admin@company.com">
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+
+                                    Password
+
+                                </label>
+
+                                <div class="input-group">
+
+                                    <input type="password" class="form-control panel-input panel-password"
+                                        placeholder="SMTP Password">
+
+                                    <button class="btn panel-password-toggle" type="button">
+
+                                        <i class="bi bi-eye"></i>
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+
+                                    Encryption
+
+                                </label>
+
+                                <select class="form-select panel-input">
+
+                                    <option selected>TLS</option>
+                                    <option>SSL</option>
+                                    <option>None</option>
+
+                                </select>
+
+                            </div>
+
+                            <div class="col-md-6 d-flex align-items-end">
+
+                                <button class="panel-outline-btn w-100">
+
+                                    <i class="bi bi-send-check-fill"></i>
+
+                                    Send Test Email
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!--- Backup & Restore --->
+
+                <div class="panel-settings-card">
+
+                    <div class="panel-settings-header">
+
+                        <div class="panel-settings-title">
+
+                            <div class="panel-settings-icon">
+
+                                <i class="bi bi-cloud-arrow-down-fill"></i>
+
+                            </div>
+
+                            <div>
+
+                                <h4>Backup & Restore</h4>
+
+                                <p>Protect your application data with backups.</p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="panel-settings-body">
+
+                        <div class="d-grid gap-3">
+
+                            <button class="panel-primary-btn">
+
+                                <i class="bi bi-cloud-arrow-up-fill"></i>
+
+                                Create Backup
+
+                            </button>
+
+                            <button class="panel-outline-btn">
+
+                                <i class="bi bi-arrow-repeat"></i>
+
+                                Restore Backup
+
+                            </button>
+
+                            <button class="panel-outline-btn">
+
+                                <i class="bi bi-download"></i>
+
+                                Download Latest Backup
+
+                            </button>
+
+                        </div>
+
+                        <hr class="my-4">
+
+                        <div class="d-flex justify-content-between">
+
+                            <span>
+
+                                Last Backup
+
+                            </span>
+
+                            <strong>
+
+                                17 Jul 2026 - 03:45 AM
+
+                            </strong>
+
+                        </div>
+
+                        <div class="d-flex justify-content-between mt-3">
+
+                            <span>
+
+                                Backup Size
+
+                            </span>
+
+                            <strong>
+
+                                486 MB
+
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!--- System Information --->
+
+            <div class="panel-settings-card mt-4">
+
+                <div class="panel-settings-header">
+
+                    <div class="panel-settings-title">
+
+                        <div class="panel-settings-icon">
+
+                            <i class="bi bi-cpu-fill"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h4>System Information</h4>
+
+                            <p>Current application and server information.</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="panel-settings-body">
+
+                    <div class="row g-4">
+
+                        <div class="col-lg-3 col-md-6">
+
+                            <div class="panel-system-box">
+
+                                <i class="bi bi-code-slash"></i>
+
+                                <h6>PHP Version</h6>
+
+                                <span>8.3.7</span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-lg-3 col-md-6">
+
+                            <div class="panel-system-box">
+
+                                <i class="bi bi-database-fill"></i>
+
+                                <h6>Database</h6>
+
+                                <span>MySQL 8.0</span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-lg-3 col-md-6">
+
+                            <div class="panel-system-box">
+
+                                <i class="bi bi-hdd-network-fill"></i>
+
+                                <h6>Storage Used</h6>
+
+                                <span>18.6 GB</span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-lg-3 col-md-6">
+
+                            <div class="panel-system-box">
+
+                                <i class="bi bi-box-seam-fill"></i>
+
+                                <h6>Application</h6>
+
+                                <span>Version 1.0.0</span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/panel.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Service | Admin </title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Main favicon -->
+    <link rel="icon" href="favicon.ico">
+    <!-- PNG favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+    <!-- Apple -->
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+    <!-- Android -->
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/images/android-chrome-512x512.png">
+    <!-- Manifest -->
+    <link rel="manifest" href="assets/images/site.webmanifest">
+    <!--- Icon Code --->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/panel.css">
+    <link rel="stylesheet" href="assets/css/loader.css">
+
+</head>
+
+<body class="panel-body">
+
+    <!---- Sidebar ---->
+
+    <aside class="panel-sidebar">
+        <div class="panel-logo">
+             <a href="index.html"> <img src="assets/images/barnd-logo.png" alt="Logo"> </a>
+        </div>
+
+        <ul class="panel-menu">
+
+            <li><a href="admin-dashboard.html"><i class="bi bi-grid-fill"></i><span>Overview</span></a></li>
+            <li><a href="admin-clients.html"><i class="bi bi-people-fill"></i><span>Clients</span></a></li>
+            <li><a href="admin-projects.html"><i class="bi bi-kanban-fill"></i><span>Projects</span></a></li>
+            <li><a href="admin-messages.html"><i class="bi bi-envelope-fill"></i><span>Messages</span></a></li>
+            <li><a href="admin-users.html"><i class="bi bi-person-badge-fill"></i><span>Users</span></a></li>
+            <li><a href="admin-settings.html"><i class="bi bi-gear-fill"></i><span>Settings</span></a></li>
+
+        </ul>
+
+        <div class="panel-sidebar-footer">
+
+            <a href="login.html"><i class="bi bi-box-arrow-right"></i><span>Logout</span></a>
+
+        </div>
+
+    </aside>
+
+    <!---- Main ----->
+
+    <div class="panel-main">
+
+        <!--- Top Navbar --->
+
+        <header class="panel-navbar">
+
+            <div class="panel-navbar-left">
+
+                <button class="panel-sidebar-toggle"><i class="bi bi-list"></i></button>
+
+                <div class="panel-search">
+
+                    <i class="bi bi-search"></i>
+                    <input type="text" placeholder="Search here...">
+
+                </div>
+
+            </div>
+
+            <div class="panel-navbar-right">
+                <button class="panel-icon-btn"><i class="bi bi-bell-fill"></i><span class="panel-dot"></span></button>
+                <div class="panel-profile">
+                    <a href="admin-settings.html"><img src="https://i.pinimg.com/736x/f1/2f/37/f12f37a580349c171e0cb7ff6f3e8331.jpg" alt="Admin"> </a>
+                    <div>
+                        <h6>Administrator</h6>
+                        <p>Super Admin</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!--- Content ---->
+
+        <main class="panel-content">
+
+            <!--- Message Page Header --->
+
+            <div class="panel-page-header">
+
+                <div class="panel-page-info">
+
+                    <span class="panel-page-subtitle">
+
+                        Administration
+
+                    </span>
+
+                    <h2>
+
+                        Messages
+
+                    </h2>
+
+                    <p>
+
+                        Manage client inquiries, support requests, and project communications from a centralized inbox.
+
+                    </p>
+
+                </div>
+
+                <div class="panel-page-action">
+
+                    <button class="panel-primary-btn">
+
+                        <i class="bi bi-envelope-plus-fill"></i>
+
+                        New Message
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!--- Message Toolbar --->
+
+            <div class="panel-toolbar">
+
+                <div class="panel-toolbar-left">
+
+                    <div class="panel-search-box">
+
+                        <i class="bi bi-search"></i>
+
+                        <input type="text" id="messageSearch" placeholder="Search messages...">
+
+                    </div>
+
+                </div>
+
+                <div class="panel-toolbar-right">
+
+                    <select class="panel-select" id="messageStatus">
+
+                        <option>All Status</option>
+                        <option>Unread</option>
+                        <option>Read</option>
+                        <option>Archived</option>
+
+                    </select>
+
+                    <select class="panel-select" id="messagePriority">
+
+                        <option>All Priority</option>
+                        <option>High</option>
+                        <option>Medium</option>
+                        <option>Low</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <!--- Message Inbox --->
+
+            <div class="panel-message-wrapper">
+
+                <!--- Conversation List --->
+
+                <div class="panel-message-sidebar">
+
+                    <div class="panel-message-list">
+
+                        <!--- Active Conversation --->
+
+                        <div class="panel-message-item active">
+
+                            <div class="panel-message-avatar">
+
+                                <img src="https://i.pravatar.cc/100?img=11" alt="">
+
+                                <span class="panel-online"></span>
+
+                            </div>
+
+                            <div class="panel-message-content">
+
+                                <div class="panel-message-top">
+
+                                    <h6>John Anderson</h6>
+
+                                    <small>10:25 AM</small>
+
+                                </div>
+
+                                <span class="panel-company">
+
+                                    TechNova Solutions
+
+                                </span>
+
+                                <p>
+
+                                    Website Development Inquiry...
+
+                                </p>
+
+                            </div>
+
+                            <span class="panel-unread-count">
+
+                                2
+
+                            </span>
+
+                        </div>
+
+                        <!--- Conversation --->
+
+                        <div class="panel-message-item">
+
+                            <div class="panel-message-avatar">
+
+                                <img src="https://i.pravatar.cc/100?img=32" alt="">
+
+                            </div>
+
+                            <div class="panel-message-content">
+
+                                <div class="panel-message-top">
+
+                                    <h6>Sarah Williams</h6>
+
+                                    <small>Yesterday</small>
+
+                                </div>
+
+                                <span class="panel-company">
+
+                                    Vision Studio
+
+                                </span>
+
+                                <p>
+
+                                    Need quotation for SEO package...
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <!--- Conversation --->
+
+                        <div class="panel-message-item">
+
+                            <div class="panel-message-avatar">
+
+                                <img src="https://i.pravatar.cc/100?img=15" alt="">
+
+                            </div>
+
+                            <div class="panel-message-content">
+
+                                <div class="panel-message-top">
+
+                                    <h6>David Miller</h6>
+
+                                    <small>Mon</small>
+
+                                </div>
+
+                                <span class="panel-company">
+
+                                    Pixel Agency
+
+                                </span>
+
+                                <p>
+
+                                    Mobile app project discussion...
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <!--- Conversation --->
+
+                        <div class="panel-message-item">
+
+                            <div class="panel-message-avatar">
+
+                                <img src="https://i.pravatar.cc/100?img=25" alt="">
+
+                            </div>
+
+                            <div class="panel-message-content">
+
+                                <div class="panel-message-top">
+
+                                    <h6>Emily Johnson</h6>
+
+                                    <small>Sun</small>
+
+                                </div>
+
+                                <span class="panel-company">
+
+                                    BlueSky Media
+
+                                </span>
+
+                                <p>
+
+                                    Can we schedule a meeting this week?
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!--- Message Preview --->
+
+                <div class="panel-message-view">
+
+                    <div class="panel-message-header">
+
+                        <div class="panel-message-user">
+
+                            <img src="https://i.pravatar.cc/100?img=11" alt="">
+
+                            <div>
+
+                                <h5>John Anderson</h5>
+
+                                <span>
+
+                                    TechNova Solutions
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="panel-message-actions">
+
+
+                            <button class="panel-action-btn">
+
+                                <i class="bi bi-star"></i>
+
+                            </button>
+
+                            <button class="panel-action-btn delete">
+
+                                <i class="bi bi-trash"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="panel-message-body">
+
+                        <span class="panel-message-date">
+
+                            17 July 2026 • 10:25 AM
+
+                        </span>
+
+                        <h4>
+
+                            Website Development Inquiry
+
+                        </h4>
+
+                        <p>
+
+                            Hello Team,
+
+                        </p>
+
+                        <p>
+
+                            We are planning to redesign our corporate website with a modern UI and improved performance.
+                            Please share your service details, estimated timeline, and pricing.
+
+                        </p>
+
+                        <p>
+
+                            We are also interested in SEO optimization and long-term maintenance support. Looking
+                            forward to your response.
+
+                        </p>
+
+                        <p>
+
+                            Regards,<br>
+
+                            John Anderson<br>
+
+                            TechNova Solutions
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!--- Message Reply Section --->
+
+            <div class="panel-message-reply">
+
+                <div class="panel-reply-header">
+
+                    <h5>
+
+                        Reply Message
+
+                    </h5>
+
+                    <div class="panel-reply-tools">
+
+                        <button class="panel-action-btn">
+
+                            <i class="bi bi-paperclip"></i>
+
+                        </button>
+
+                        <button class="panel-action-btn">
+
+                            <i class="bi bi-image"></i>
+
+                        </button>
+
+                        <button class="panel-action-btn">
+
+                            <i class="bi bi-emoji-smile"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <textarea class="panel-reply-input" rows="6" placeholder="Type your reply here..."></textarea>
+
+                <div class="panel-reply-footer">
+
+                    <div class="panel-reply-options">
+
+                        <label class="form-check">
+
+                            <input class="form-check-input" type="checkbox">
+
+                            <span class="form-check-label">
+
+                                Notify Client via Email
+
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                    <div class="panel-reply-buttons">
+
+                        <button class="panel-outline-btn">
+
+                            <i class="bi bi-x-circle"></i>
+
+                            Cancel
+
+                        </button>
+
+                        <button class="panel-primary-btn">
+
+                            <i class="bi bi-send-fill"></i>
+
+                            Send Reply
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/panel.js"></script>
+
+</body>
+
+</html>

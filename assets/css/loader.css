@@ -1,0 +1,265 @@
+/*--- Loader ---*/
+
+.site-loader{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100vh;
+    background:#08111F;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    z-index:999999;
+    transition:opacity .6s ease,visibility .6s ease;
+}
+
+/*--- Hide Loader ---*/
+
+.site-loader.site-loader-hide{
+    opacity:0;
+    visibility:hidden;
+}
+
+/*--- Background ---*/
+
+.site-loader-bg{
+    position:absolute;
+    inset:0;
+    background:
+    radial-gradient(circle at top left,#2563EB22,transparent 35%),
+    radial-gradient(circle at bottom right,#7C3AED22,transparent 35%);
+}
+
+/*--- Grid ---*/
+
+.site-loader::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+    linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+    background-size:45px 45px;
+    animation:loaderGrid 18s linear infinite;
+}
+
+@keyframes loaderGrid{
+
+0%{
+background-position:0 0;
+}
+
+100%{
+background-position:45px 45px;
+}
+
+}
+
+/*--- Content ---*/
+
+.site-loader-content{
+    position:relative;
+    z-index:5;
+    text-align:center;
+}
+
+/*--- Rings ---*/
+
+.site-loader-rings{
+    position:relative;
+    width:180px;
+    height:180px;
+    margin:auto;
+}
+
+.site-loader-ring{
+    position:absolute;
+    border-radius:50%;
+    border:2px solid transparent;
+}
+
+.site-loader-ring-1{
+    inset:0;
+    border-top-color:#2563EB;
+    animation:ringRotate 6s linear infinite;
+}
+
+.site-loader-ring-2{
+    inset:15px;
+    border-right-color:#DFFF45;
+    animation:ringRotateReverse 5s linear infinite;
+}
+
+.site-loader-ring-3{
+    inset:30px;
+    border-bottom-color:#7C3AED;
+    animation:ringRotate 4s linear infinite;
+}
+
+@keyframes ringRotate{
+
+100%{
+transform:rotate(360deg);
+}
+
+}
+
+@keyframes ringRotateReverse{
+
+100%{
+transform:rotate(-360deg);
+}
+
+}
+
+/*--- Logo ---*/
+
+.site-loader-logo{
+    position:absolute;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.site-loader-logo img{
+    width:90px;
+    animation:logoFloat 3s ease-in-out infinite;
+}
+
+@keyframes logoFloat{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-10px);
+}
+
+}
+
+/*--- Title ---*/
+
+.site-loader-title{
+    margin-top:35px;
+    color:#fff;
+    font-size:30px;
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+/*--- Status ---*/
+
+.site-loader-status{
+    color:#AEB8C8;
+    margin:15px 0 30px;
+    font-size:16px;
+}
+
+/*--- Progress ---*/
+
+.site-loader-progress{
+    width:320px;
+    max-width:90vw;
+    margin:auto;
+}
+
+.site-loader-progress-bar{
+    width:100%;
+    height:8px;
+    border-radius:50px;
+    overflow:hidden;
+    background:rgba(255,255,255,.08);
+}
+
+.site-loader-progress-bar span{
+    display:block;
+    width:0%;
+    height:100%;
+    border-radius:50px;
+    background:linear-gradient(90deg,#2563EB,#60A5FA,#DFFF45);
+}
+
+.site-loader-percent{
+    color:#fff;
+    margin-top:12px;
+    font-weight:600;
+}
+
+/*--- Particles ---*/
+
+.site-loader-particle{
+    position:absolute;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#60A5FA;
+    opacity:.6;
+}
+
+.site-loader-particle-1{
+    top:20%;
+    left:15%;
+    animation:particleOne 8s linear infinite;
+}
+
+.site-loader-particle-2{
+    right:18%;
+    top:28%;
+    animation:particleTwo 7s linear infinite;
+}
+
+.site-loader-particle-3{
+    bottom:18%;
+    left:60%;
+    animation:particleThree 9s linear infinite;
+}
+
+@keyframes particleOne{
+
+50%{
+transform:translateY(-60px);
+}
+
+}
+
+@keyframes particleTwo{
+
+50%{
+transform:translate(-40px,40px);
+}
+
+}
+
+@keyframes particleThree{
+
+50%{
+transform:translateY(-80px);
+}
+
+}
+
+/*--- Responsive ---*/
+
+@media(max-width:767px){
+
+.site-loader-rings{
+width:140px;
+height:140px;
+}
+
+.site-loader-logo img{
+width:70px;
+}
+
+.site-loader-title{
+font-size:24px;
+}
+
+.site-loader-progress{
+width:260px;
+}
+
+}

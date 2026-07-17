@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Service | Client </title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Main favicon -->
+    <link rel="icon" href="favicon.ico">
+    <!-- PNG favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+    <!-- Apple -->
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+    <!-- Android -->
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/images/android-chrome-512x512.png">
+    <!-- Manifest -->
+    <link rel="manifest" href="assets/images/site.webmanifest">
+    <!--- Icon Code --->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/panel.css">
+    <link rel="stylesheet" href="assets/css/loader.css">
+
+</head>
+
+<body class="panel-body">
+
+    <!---- Sidebar ---->
+
+    <aside class="panel-sidebar">
+
+        <div class="panel-logo">
+
+            <a href="index.html"> <img src="assets/images/barnd-logo.png" alt="Logo"></a>
+
+        </div>
+
+        <ul class="panel-menu">
+
+            <li><a href="client-dashboard.html"><i class="bi bi-speedometer2"></i><span>Dashboard</span></a></li>
+            <li><a href="client-projects.html"><i class="bi bi-kanban-fill"></i><span>My Projects</span></a></li>
+            <li><a href="client-services.html"><i class="bi bi-tools"></i><span>My Services</span></a></li>
+            <li><a href="client-invoices.html"><i class="bi bi-receipt-cutoff"></i><span>Invoices</span></a></li>
+            <li><a href="client-support.html"><i class="bi bi-chat-dots-fill"></i><span>Support Tickets</span></a></li>
+            <li><a href="client-profile.html"><i class="bi bi-person-circle"></i><span>My Profile</span></a></li>
+
+        </ul>
+
+        <div class="panel-sidebar-footer">
+
+            <a href="login.html"><i class="bi bi-box-arrow-right"></i><span>Logout</span></a>
+
+        </div>
+
+    </aside>
+
+    <!---- Main ----->
+
+    <div class="panel-main">
+
+        <!--- Top Navbar --->
+
+        <header class="panel-navbar">
+
+            <div class="panel-navbar-left">
+
+                <button class="panel-sidebar-toggle"><i class="bi bi-list"></i></button>
+
+            </div>
+
+            <div class="panel-navbar-right">
+                <button class="panel-icon-btn"><i class="bi bi-bell-fill"></i><span class="panel-dot"></span></button>
+                <div class="panel-profile">
+                    <a href="client-profile.html"><img
+                            src="https://i.pinimg.com/736x/7e/46/c6/7e46c6d2798eff446b365c5246f4c9ca.jpg" alt="Client">
+                    </a>
+                    <div>
+                        <h6>John Anderson</h6>
+                        <p>Premium Client</p>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+
+        <!--- Content ---->
+
+        <main class="panel-content">
+
+            <!--- Page Header --->
+
+            <div class="panel-page-header">
+
+                <div class="panel-page-info">
+
+                    <span class="panel-page-subtitle">Client Portal</span>
+
+                    <h2>Support Tickets</h2>
+
+                    <p>Track support requests, communicate with our team and monitor ticket progress.</p>
+
+                </div>
+
+                <div class="panel-page-action">
+
+                    <button class="panel-primary-btn">
+
+                        <i class="bi bi-plus-circle-fill"></i>
+
+                        Create Ticket
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!--- Toolbar --->
+
+            <div class="panel-toolbar">
+
+                <div class="panel-toolbar-left">
+
+                    <div class="panel-search-box">
+
+                        <i class="bi bi-search"></i>
+
+                        <input type="text" id="ticketSearch" placeholder="Search ticket...">
+
+                    </div>
+
+                </div>
+
+                <div class="panel-toolbar-right">
+
+                    <div class="panel-filter-wrap">
+
+                        <select class="form-select panel-filter" id="statusFilter">
+
+                            <option>All Status</option>
+                            <option>Open</option>
+                            <option>In Progress</option>
+                            <option>Waiting for Reply</option>
+                            <option>Resolved</option>
+                            <option>Closed</option>
+
+                        </select>
+
+                        <i class="bi bi-chevron-down"></i>
+
+                    </div>
+
+                    <div class="panel-filter-wrap">
+
+                        <select class="form-select panel-filter" id="priorityFilter">
+
+                            <option>All Priority</option>
+                            <option>Critical</option>
+                            <option>High</option>
+                            <option>Medium</option>
+                            <option>Low</option>
+
+                        </select>
+
+                        <i class="bi bi-chevron-down"></i>
+
+                    </div>
+
+                    <div class="panel-filter-wrap">
+
+                        <select class="form-select panel-filter" id="categoryFilter">
+
+                            <option>All Categories</option>
+                            <option>Website</option>
+                            <option>Hosting</option>
+                            <option>Domain</option>
+                            <option>Email</option>
+                            <option>SEO</option>
+                            <option>Billing</option>
+
+                        </select>
+
+                        <i class="bi bi-chevron-down"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!--- Statistics --->
+
+            <div class="row g-4 mt-2">
+
+                <div class="col-xl-3 col-md-6">
+
+                    <div class="panel-stat-card">
+
+                        <div class="panel-stat-icon">
+
+                            <i class="bi bi-ticket-perforated-fill"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>24</h3>
+
+                            <p>Total Tickets</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-xl-3 col-md-6">
+
+                    <div class="panel-stat-card">
+
+                        <div class="panel-stat-icon">
+
+                            <i class="bi bi-exclamation-circle-fill"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>05</h3>
+
+                            <p>Open Tickets</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-xl-3 col-md-6">
+
+                    <div class="panel-stat-card">
+
+                        <div class="panel-stat-icon">
+
+                            <i class="bi bi-arrow-repeat"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>07</h3>
+
+                            <p>In Progress</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-xl-3 col-md-6">
+
+                    <div class="panel-stat-card">
+
+                        <div class="panel-stat-icon">
+
+                            <i class="bi bi-check-circle-fill"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>12</h3>
+
+                            <p>Resolved</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!--- Support Ticket Cards --->
+
+            <div class="row g-4 mt-2">
+
+                <div class="col-xl-6">
+
+                    <div class="panel-ticket-card">
+
+                        <div class="panel-ticket-top">
+
+                            <div>
+
+                                <span class="panel-ticket-id">#TKT-2026-001</span>
+
+                                <h4>Website Homepage Layout Issue</h4>
+
+                            </div>
+
+                            <div class="d-flex gap-2">
+
+                                <span class="panel-badge panel-progress">Open</span>
+
+                                <span class="panel-badge panel-danger">High</span>
+
+                            </div>
+
+                        </div>
+
+                        <p>The homepage banner is not displaying correctly on mobile devices after the latest update.
+                        </p>
+
+                        <div class="panel-ticket-meta">
+
+                            <div>
+
+                                <i class="bi bi-grid-fill"></i>
+
+                                <span>Website</span>
+
+                            </div>
+
+                            <div>
+
+                                <i class="bi bi-calendar-event"></i>
+
+                                <span>18 Jul 2026</span>
+
+                            </div>
+
+                            <div>
+
+                                <i class="bi bi-clock-history"></i>
+
+                                <span>Updated 2 Hours Ago</span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="panel-ticket-footer">
+
+                            <div class="panel-ticket-agent">
+
+                                <img src="https://i.pravatar.cc/100?img=12" alt="">
+
+                                <div>
+
+                                    <h6>David Wilson</h6>
+
+                                    <small>Support Engineer</small>
+
+                                </div>
+
+                            </div>
+
+                            <div class="panel-ticket-stats">
+
+                                <span><i class="bi bi-chat-left-text"></i>12</span>
+
+                                <span><i class="bi bi-paperclip"></i>4</span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="panel-ticket-progress">
+
+                            <div class="progress">
+
+                                <div class="progress-bar bg-primary" style="width:30%;"></div>
+
+                            </div>
+
+                            <small>30% Completed</small>
+
+                        </div>
+
+                        <button class="panel-primary-btn w-100 mt-4">
+
+                            <i class="bi bi-chat-dots-fill"></i>
+
+                            View Conversation
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="col-xl-6">
+
+                    <div class="panel-ticket-card">
+
+                        <div class="panel-ticket-top">
+
+                            <div>
+
+                                <span class="panel-ticket-id">#TKT-2026-002</span>
+
+                                <h4>Cloud Hosting Upgrade</h4>
+
+                            </div>
+
+                            <div class="d-flex gap-2">
+
+                                <span class="panel-badge panel-review">In Progress</span>
+
+                                <span class="panel-badge panel-warning">Medium</span>
+
+                            </div>
+
+                        </div>
+
+                        <p>Requested additional server resources to improve website performance during peak traffic.</p>
+
+                        <div class="panel-ticket-meta">
+
+                            <div>
+
+                                <i class="bi bi-hdd-network-fill"></i>
+
+                                <span>Hosting</span>
+
+                            </div>
+
+                            <div>
+
+                                <i class="bi bi-calendar-event"></i>
+
+                                <span>16 Jul 2026</span>
+
+                            </div>
+
+                            <div>
+
+                                <i class="bi bi-clock-history"></i>
+
+                                <span>Updated Yesterday</span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="panel-ticket-footer">
+
+                            <div class="panel-ticket-agent">
+
+                                <img src="https://i.pravatar.cc/100?img=15" alt="">
+
+                                <div>
+
+                                    <h6>Sarah Parker</h6>
+
+                                    <small>Cloud Specialist</small>
+
+                                </div>
+
+                            </div>
+
+                            <div class="panel-ticket-stats">
+
+                                <span><i class="bi bi-chat-left-text"></i>8</span>
+
+                                <span><i class="bi bi-paperclip"></i>2</span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="panel-ticket-progress">
+
+                            <div class="progress">
+
+                                <div class="progress-bar bg-info" style="width:65%;"></div>
+
+                            </div>
+
+                            <small>65% Completed</small>
+
+                        </div>
+
+                        <button class="panel-primary-btn w-100 mt-4">
+
+                            <i class="bi bi-chat-dots-fill"></i>
+
+                            View Conversation
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="col-xl-6">
+
+                    <div class="panel-ticket-card">
+
+                        <div class="panel-ticket-top">
+
+                            <div>
+
+                                <span class="panel-ticket-id">#TKT-2026-003</span>
+
+                                <h4>Email Configuration Support</h4>
+
+                            </div>
+
+                            <div class="d-flex gap-2">
+
+                                <span class="panel-badge panel-completed">Resolved</span>
+
+                                <span class="panel-badge panel-success">Low</span>
+
+                            </div>
+
+                        </div>
+
+                        <p>Business email accounts configured successfully with Outlook and mobile synchronization.</p>
+
+                        <div class="panel-ticket-meta">
+
+                            <div>
+
+                                <i class="bi bi-envelope-fill"></i>
+
+                                <span>Email</span>
+
+                            </div>
+
+                            <div>
+
+                                <i class="bi bi-calendar-event"></i>
+
+                                <span>11 Jul 2026</span>
+
+                            </div>
+
+                            <div>
+
+                                <i class="bi bi-clock-history"></i>
+
+                                <span>Closed 3 Days Ago</span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="panel-ticket-footer">
+
+                            <div class="panel-ticket-agent">
+
+                                <img src="https://i.pravatar.cc/100?img=25" alt="">
+
+                                <div>
+
+                                    <h6>Emily Carter</h6>
+
+                                    <small>Support Executive</small>
+
+                                </div>
+
+                            </div>
+
+                            <div class="panel-ticket-stats">
+
+                                <span><i class="bi bi-chat-left-text"></i>5</span>
+
+                                <span><i class="bi bi-paperclip"></i>1</span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="panel-ticket-progress">
+
+                            <div class="progress">
+
+                                <div class="progress-bar bg-success" style="width:100%;"></div>
+
+                            </div>
+
+                            <small>Completed</small>
+
+                        </div>
+
+                        <button class="panel-outline-btn w-100 mt-4">
+
+                            <i class="bi bi-eye-fill"></i>
+
+                            View Details
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="col-xl-6">
+
+                    <div class="panel-ticket-card">
+
+                        <div class="panel-ticket-top">
+
+                            <div>
+
+                                <span class="panel-ticket-id">#TKT-2026-004</span>
+
+                                <h4>Domain DNS Configuration</h4>
+
+                            </div>
+
+                            <div class="d-flex gap-2">
+
+                                <span class="panel-badge panel-progress">Waiting</span>
+
+                                <span class="panel-badge panel-danger">Critical</span>
+
+                            </div>
+
+                        </div>
+
+                        <p>DNS records are awaiting client verification before domain migration can be completed.</p>
+
+                        <div class="panel-ticket-meta">
+
+                            <div>
+
+                                <i class="bi bi-globe2"></i>
+
+                                <span>Domain</span>
+
+                            </div>
+
+                            <div>
+
+                                <i class="bi bi-calendar-event"></i>
+
+                                <span>20 Jul 2026</span>
+
+                            </div>
+
+                            <div>
+
+                                <i class="bi bi-clock-history"></i>
+
+                                <span>Updated 30 Min Ago</span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="panel-ticket-footer">
+
+                            <div class="panel-ticket-agent">
+
+                                <img src="https://i.pravatar.cc/100?img=18" alt="">
+
+                                <div>
+
+                                    <h6>Michael Brown</h6>
+
+                                    <small>Network Engineer</small>
+
+                                </div>
+
+                            </div>
+
+                            <div class="panel-ticket-stats">
+
+                                <span><i class="bi bi-chat-left-text"></i>15</span>
+
+                                <span><i class="bi bi-paperclip"></i>6</span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="panel-ticket-progress">
+
+                            <div class="progress">
+
+                                <div class="progress-bar bg-danger" style="width:80%;"></div>
+
+                            </div>
+
+                            <small>Waiting For Client Response</small>
+
+                        </div>
+
+                        <button class="panel-primary-btn w-100 mt-4">
+
+                            <i class="bi bi-chat-dots-fill"></i>
+
+                            View Conversation
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!--- Bottom Section --->
+
+            <div class="row g-4 mt-2">
+
+                <div class="col-xl-5">
+
+                    <div class="panel-card h-100">
+
+                        <div class="panel-card-header">
+
+                            <div>
+
+                                <h4>Ticket Activity</h4>
+
+                                <p>Latest updates on your support requests.</p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="panel-ticket-timeline">
+
+                            <div class="panel-ticket-step completed">
+
+                                <div class="panel-ticket-step-icon">
+
+                                    <i class="bi bi-plus-lg"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <h6>Ticket Created</h6>
+
+                                    <p>Website Homepage Layout Issue</p>
+
+                                    <small>18 Jul 2026 • 09:15 AM</small>
+
+                                </div>
+
+                            </div>
+
+                            <div class="panel-ticket-step completed">
+
+                                <div class="panel-ticket-step-icon">
+
+                                    <i class="bi bi-person-check-fill"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <h6>Support Agent Assigned</h6>
+
+                                    <p>David Wilson accepted your request.</p>
+
+                                    <small>18 Jul 2026 • 09:30 AM</small>
+
+                                </div>
+
+                            </div>
+
+                            <div class="panel-ticket-step active">
+
+                                <div class="panel-ticket-step-icon">
+
+                                    <i class="bi bi-chat-dots-fill"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <h6>Technical Investigation</h6>
+
+                                    <p>Our team is reviewing the reported issue.</p>
+
+                                    <small>Today • 10:40 AM</small>
+
+                                </div>
+
+                            </div>
+
+                            <div class="panel-ticket-step">
+
+                                <div class="panel-ticket-step-icon">
+
+                                    <i class="bi bi-check-circle-fill"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <h6>Resolution</h6>
+
+                                    <p>Waiting for final confirmation.</p>
+
+                                    <small>Estimated Today</small>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-xl-7">
+
+                    <div class="panel-card h-100">
+
+                        <div class="panel-card-header">
+
+                            <div>
+
+                                <h4>Support Team</h4>
+
+                                <p>Your dedicated support specialists.</p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="row g-3">
+
+                            <div class="col-md-4">
+
+                                <div class="panel-support-member">
+
+                                    <img src="https://i.pravatar.cc/120?img=12" alt="">
+
+                                    <h5>David Wilson</h5>
+
+                                    <span>Support Engineer</span>
+
+                                    <p><i class="bi bi-envelope-fill"></i> david@company.com</p>
+
+                                    <p><i class="bi bi-telephone-fill"></i> +91 98765 43210</p>
+
+                                    <button class="panel-primary-btn w-100">
+
+                                        <i class="bi bi-chat-dots-fill"></i>
+
+                                        Chat
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-4">
+
+                                <div class="panel-support-member">
+
+                                    <img src="https://i.pravatar.cc/120?img=18" alt="">
+
+                                    <h5>Sarah Parker</h5>
+
+                                    <span>Cloud Specialist</span>
+
+                                    <p><i class="bi bi-envelope-fill"></i> sarah@company.com</p>
+
+                                    <p><i class="bi bi-telephone-fill"></i> +91 98765 43211</p>
+
+                                    <button class="panel-primary-btn w-100">
+
+                                        <i class="bi bi-chat-dots-fill"></i>
+
+                                        Chat
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-4">
+
+                                <div class="panel-support-member">
+
+                                    <img src="https://i.pravatar.cc/120?img=25" alt="">
+
+                                    <h5>Emily Carter</h5>
+
+                                    <span>Account Manager</span>
+
+                                    <p><i class="bi bi-envelope-fill"></i> emily@company.com</p>
+
+                                    <p><i class="bi bi-telephone-fill"></i> +91 98765 43212</p>
+
+                                    <button class="panel-primary-btn w-100">
+
+                                        <i class="bi bi-chat-dots-fill"></i>
+
+                                        Chat
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-xl-7">
+
+                    <div class="panel-card h-100">
+
+                        <div class="panel-card-header">
+
+                            <div>
+
+                                <h4>Quick Help</h4>
+
+                                <p>Frequently used support services.</p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="row g-3">
+
+                            <div class="col-md-6">
+
+                                <div class="panel-help-card">
+
+                                    <div class="panel-help-icon">
+
+                                        <i class="bi bi-plus-circle-fill"></i>
+
+                                    </div>
+
+                                    <h5>Create New Ticket</h5>
+
+                                    <p>Submit a new support request for technical assistance.</p>
+
+                                    <button class="panel-outline-btn w-100">
+
+                                        Open Ticket
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <div class="panel-help-card">
+
+                                    <div class="panel-help-icon">
+
+                                        <i class="bi bi-chat-left-dots-fill"></i>
+
+                                    </div>
+
+                                    <h5>Live Chat</h5>
+
+                                    <p>Start an instant conversation with our support team.</p>
+
+                                    <button class="panel-outline-btn w-100">
+
+                                        Start Chat
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <div class="panel-help-card">
+
+                                    <div class="panel-help-icon">
+
+                                        <i class="bi bi-journal-bookmark-fill"></i>
+
+                                    </div>
+
+                                    <h5>Knowledge Base</h5>
+
+                                    <p>Browse guides, FAQs and troubleshooting articles.</p>
+
+                                    <button class="panel-outline-btn w-100">
+
+                                        Browse Articles
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <div class="panel-help-card">
+
+                                    <div class="panel-help-icon">
+
+                                        <i class="bi bi-display-fill"></i>
+
+                                    </div>
+
+                                    <h5>Remote Support</h5>
+
+                                    <p>Schedule a secure remote desktop support session.</p>
+
+                                    <button class="panel-outline-btn w-100">
+
+                                        Book Session
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-xl-5">
+
+                    <div class="panel-card h-100">
+
+                        <div class="panel-card-header">
+
+                            <div>
+
+                                <h4>Support Performance</h4>
+
+                                <p>Your service quality overview.</p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="panel-support-stats">
+
+                            <div class="panel-performance-item">
+
+                                <span>Average Response</span>
+
+                                <h3>18 Min</h3>
+
+                            </div>
+
+                            <div class="panel-performance-item">
+
+                                <span>Average Resolution</span>
+
+                                <h3>5.2 Hrs</h3>
+
+                            </div>
+
+                            <div class="panel-performance-item">
+
+                                <span>Customer Satisfaction</span>
+
+                                <h3>98%</h3>
+
+                            </div>
+
+                            <div class="panel-performance-item">
+
+                                <span>Tickets This Month</span>
+
+                                <h3>06</h3>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/panel.js"></script>
+
+</body>
+
+</html>

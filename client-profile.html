@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Service | Client </title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Main favicon -->
+    <link rel="icon" href="favicon.ico">
+    <!-- PNG favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+    <!-- Apple -->
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+    <!-- Android -->
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/images/android-chrome-512x512.png">
+    <!-- Manifest -->
+    <link rel="manifest" href="assets/images/site.webmanifest">
+    <!--- Icon Code --->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/panel.css">
+    <link rel="stylesheet" href="assets/css/loader.css">
+
+</head>
+
+<body class="panel-body">
+
+    <!---- Sidebar ---->
+
+    <aside class="panel-sidebar">
+
+        <div class="panel-logo">
+
+            <a href="index.html"> <img src="assets/images/barnd-logo.png" alt="Logo"></a>
+
+        </div>
+
+        <ul class="panel-menu">
+
+            <li><a href="client-dashboard.html"><i class="bi bi-speedometer2"></i><span>Dashboard</span></a></li>
+            <li><a href="client-projects.html"><i class="bi bi-kanban-fill"></i><span>My Projects</span></a></li>
+            <li><a href="client-services.html"><i class="bi bi-tools"></i><span>My Services</span></a></li>
+            <li><a href="client-invoices.html"><i class="bi bi-receipt-cutoff"></i><span>Invoices</span></a></li>
+            <li><a href="client-support.html"><i class="bi bi-chat-dots-fill"></i><span>Support Tickets</span></a></li>
+            <li><a href="client-profile.html"><i class="bi bi-person-circle"></i><span>My Profile</span></a></li>
+
+        </ul>
+
+        <div class="panel-sidebar-footer">
+
+            <a href="login.html"><i class="bi bi-box-arrow-right"></i><span>Logout</span></a>
+
+        </div>
+
+    </aside>
+
+    <!---- Main ----->
+
+    <div class="panel-main">
+
+        <!--- Top Navbar --->
+
+        <header class="panel-navbar">
+
+            <div class="panel-navbar-left">
+
+                <button class="panel-sidebar-toggle"><i class="bi bi-list"></i></button>
+
+            </div>
+
+            <div class="panel-navbar-right">
+                <button class="panel-icon-btn"><i class="bi bi-bell-fill"></i><span class="panel-dot"></span></button>
+                <div class="panel-profile">
+                    <a href="client-profile.html"><img
+                            src="https://i.pinimg.com/736x/7e/46/c6/7e46c6d2798eff446b365c5246f4c9ca.jpg" alt="Client">
+                    </a>
+                    <div>
+                        <h6>John Anderson</h6>
+                        <p>Premium Client</p>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+
+        <!--- Content ---->
+
+        <main class="panel-content">
+
+            <!--- Page Header --->
+
+            <div class="panel-page-header">
+
+                <div class="panel-page-info">
+
+                    <span class="panel-page-subtitle">Client Portal</span>
+
+                    <h2>My Profile</h2>
+
+                    <p>Manage your personal information, company details, security settings and account preferences.</p>
+
+                </div>
+
+                <div class="panel-page-action d-flex gap-2">
+
+                    <button class="panel-outline-btn">
+
+                        <i class="bi bi-shield-lock-fill"></i>
+
+                        Change Password
+
+                    </button>
+
+                    <button class="panel-primary-btn">
+
+                        <i class="bi bi-pencil-square"></i>
+
+                        Edit Profile
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!--- Profile Hero --->
+
+            <div class="panel-profile-hero">
+
+                <div class="panel-profile-cover"></div>
+
+                <div class="panel-profile-content">
+
+                    <div class="panel-profile-avatar">
+
+                        <img src="https://i.pinimg.com/736x/7e/46/c6/7e46c6d2798eff446b365c5246f4c9ca.jpg" alt="Profile">
+
+                        <button class="panel-avatar-edit">
+
+                            <i class="bi bi-camera-fill"></i>
+
+                        </button>
+
+                    </div>
+
+                    <div class="panel-profile-details">
+
+                        <h3>John Anderson</h3>
+
+                        <span class="panel-profile-role">Business Client</span>
+
+                        <div class="panel-profile-meta">
+
+                            <span><i class="bi bi-person-vcard-fill"></i> CL-102548</span>
+
+                            <span><i class="bi bi-building-fill"></i> The Stacklty</span>
+
+                            <span><i class="bi bi-envelope-fill"></i> John@example.com</span>
+
+                            <span><i class="bi bi-telephone-fill"></i> +91 98765 43210</span>
+
+                            <span><i class="bi bi-geo-alt-fill"></i> Canary Wharf, London E14 5AB, United Kingdom</span>
+
+                            <span><i class="bi bi-calendar-check-fill"></i> Member Since Jan 2026</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!--- Profile Completion & Quick Stats --->
+
+            <div class="row g-4 mt-2">
+
+                <div class="col-lg-4">
+
+                    <div class="panel-card h-100">
+
+                        <div class="panel-card-header">
+
+                            <div>
+
+                                <h4>Profile Completion</h4>
+
+                                <p>Keep your profile updated.</p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="panel-profile-progress">
+
+                            <div class="progress">
+
+                                <div class="progress-bar bg-success" style="width:88%;"></div>
+
+                            </div>
+
+                            <div class="panel-progress-info">
+
+                                <h2>88%</h2>
+
+                                <span>Profile Completed</span>
+
+                            </div>
+
+                            <button class="panel-primary-btn w-100 mt-4">
+
+                                <i class="bi bi-person-check-fill"></i>
+
+                                Complete Profile
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-8">
+
+                    <div class="row g-4">
+
+                        <div class="col-md-6 col-xl-3">
+
+                            <div class="panel-stat-card">
+
+                                <div class="panel-stat-icon">
+
+                                    <i class="bi bi-kanban-fill"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <h3>08</h3>
+
+                                    <p>Projects</p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6 col-xl-3">
+
+                            <div class="panel-stat-card">
+
+                                <div class="panel-stat-icon">
+
+                                    <i class="bi bi-briefcase-fill"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <h3>12</h3>
+
+                                    <p>Services</p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6 col-xl-3">
+
+                            <div class="panel-stat-card">
+
+                                <div class="panel-stat-icon">
+
+                                    <i class="bi bi-ticket-perforated-fill"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <h3>05</h3>
+
+                                    <p>Tickets</p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6 col-xl-3">
+
+                            <div class="panel-stat-card">
+
+                                <div class="panel-stat-icon">
+
+                                    <i class="bi bi-credit-card-2-front-fill"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <h3>₹2.8L</h3>
+
+                                    <p>Total Paid</p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!--- Personal Information --->
+
+            <div class="row g-4 mt-2">
+
+                <div class="col-xl-7">
+
+                    <div class="panel-card h-100">
+
+                        <div class="panel-card-header">
+
+                            <div>
+
+                                <h4>Personal Information</h4>
+
+                                <p>Your primary contact and business information.</p>
+
+                            </div>
+
+                            <button class="panel-outline-btn">
+
+                                <i class="bi bi-pencil-square"></i>
+
+                                Edit
+
+                            </button>
+
+                        </div>
+
+                        <div class="row g-4">
+
+                            <div class="col-md-6">
+
+                                <div class="panel-info-box">
+
+                                    <label>Full Name</label>
+
+                                    <h6>John Anderson</h6>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <div class="panel-info-box">
+
+                                    <label>Company Name</label>
+
+                                    <h6>The Stackly </h6>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <div class="panel-info-box">
+
+                                    <label>Email Address</label>
+
+                                    <h6>john@example.com</h6>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <div class="panel-info-box">
+
+                                    <label>Phone Number</label>
+
+                                    <h6>+91 98765 43210</h6>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <div class="panel-info-box">
+
+                                    <label>Website</label>
+
+                                    <h6>www.Stackly.com</h6>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <div class="panel-info-box">
+
+                                    <label>GST Number</label>
+
+                                    <h6>33ABCDE1234F1Z5</h6>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <div class="panel-info-box">
+
+                                    <label>Country</label>
+
+                                    <h6>United Kingdom</h6>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <div class="panel-info-box">
+
+                                    <label>Time Zone</label>
+
+                                    <h6>(GMT +09:00) Canary Wharf, United Kingdom</h6>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-12">
+
+                                <div class="panel-info-box">
+
+                                    <label>Business Address</label>
+
+                                    <h6>Canary Wharf, London E14 5AB, United Kingdom</h6>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-xl-5">
+
+                    <div class="panel-card h-100">
+
+                        <div class="panel-card-header">
+
+                            <div>
+
+                                <h4>Account Details</h4>
+
+                                <p>Your account information and membership.</p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="panel-account-list">
+
+                            <div class="panel-account-item">
+
+                                <span>Client ID</span>
+
+                                <strong>CL-102548</strong>
+
+                            </div>
+
+                            <div class="panel-account-item">
+
+                                <span>Account Type</span>
+
+                                <strong>Business Client</strong>
+
+                            </div>
+
+                            <div class="panel-account-item">
+
+                                <span>Membership</span>
+
+                                <strong>Premium</strong>
+
+                            </div>
+
+                            <div class="panel-account-item">
+
+                                <span>Registration Date</span>
+
+                                <strong>30 Jan 2026</strong>
+
+                            </div>
+
+                            <div class="panel-account-item">
+
+                                <span>Last Login</span>
+
+                                <strong>Today • 09:42 AM</strong>
+
+                            </div>
+
+                            <div class="panel-account-item">
+
+                                <span>Preferred Language</span>
+
+                                <strong>English</strong>
+
+                            </div>
+
+                            <div class="panel-account-item">
+
+                                <span>Currency</span>
+
+                                <strong>USA ($)</strong>
+
+                            </div>
+
+                            <div class="panel-account-item">
+
+                                <span>Account Status</span>
+
+                                <span class="panel-badge panel-completed">
+
+                                    <i class="bi bi-check-circle-fill"></i>
+
+                                    Verified
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!--- Security & Preferences --->
+
+            <div class="row g-4 mt-2">
+
+                <div class="col-xl-7">
+
+                    <div class="panel-card h-100">
+
+                        <div class="panel-card-header">
+
+                            <div>
+
+                                <h4>Login Security</h4>
+
+                                <p>Protect your account with advanced security settings.</p>
+
+                            </div>
+
+                            <button class="panel-outline-btn">
+
+                                <i class="bi bi-shield-lock-fill"></i>
+
+                                Manage Security
+
+                            </button>
+
+                        </div>
+
+                        <div class="panel-account-list">
+
+                            <div class="panel-account-item">
+
+                                <div>
+
+                                    <h6>Password</h6>
+
+                                    <small>Last changed 12 days ago</small>
+
+                                </div>
+
+                                <button class="panel-outline-btn">
+
+                                    <i class="bi bi-key-fill"></i>
+
+                                    Change
+
+                                </button>
+
+                            </div>
+
+                            <div class="panel-account-item">
+
+                                <div>
+
+                                    <h6>Two-Factor Authentication</h6>
+
+                                    <small>Extra protection for your account</small>
+
+                                </div>
+
+                                <span class="panel-badge panel-completed">
+
+                                    <i class="bi bi-check-circle-fill"></i>
+
+                                    Enabled
+
+                                </span>
+
+                            </div>
+
+                            <div class="panel-account-item">
+
+                                <div>
+
+                                    <h6>Recovery Email</h6>
+
+                                    <small>Used for password recovery</small>
+
+                                </div>
+
+                                <strong>recovery@example.com</strong>
+
+                            </div>
+
+                            <div class="panel-account-item">
+
+                                <div>
+
+                                    <h6>Recovery Phone</h6>
+
+                                    <small>Receive verification codes</small>
+
+                                </div>
+
+                                <strong>+91 98765 43210</strong>
+
+                            </div>
+
+                        </div>
+
+                        <hr class="my-4">
+
+                        <h5 class="mb-3">Active Devices</h5>
+
+                        <div class="panel-account-list">
+
+                            <div class="panel-account-item">
+
+                                <div>
+
+                                    <h6><i class="bi bi-laptop-fill me-2"></i>Windows PC</h6>
+
+                                    <small>Canary Wharf,United Kingdom</small>
+
+                                </div>
+
+                                <span class="panel-badge panel-completed">
+
+                                    Current Device
+
+                                </span>
+
+                            </div>
+
+                            <div class="panel-account-item">
+
+                                <div>
+
+                                    <h6><i class="bi bi-phone-fill me-2"></i>Android Phone</h6>
+
+                                    <small>London E14 5AB, United Kingdom </small>
+
+                                </div>
+
+                                <button class="panel-outline-btn">
+
+                                    <i class="bi bi-x-circle"></i>
+
+                                    Logout
+
+                                </button>
+
+                            </div>
+
+                            <div class="panel-account-item">
+
+                                <div>
+
+                                    <h6><i class="bi bi-tablet-fill me-2"></i>iPad</h6>
+
+                                    <small> United Kingdom</small>
+
+                                </div>
+
+                                <button class="panel-outline-btn">
+
+                                    <i class="bi bi-x-circle"></i>
+
+                                    Logout
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-xl-5">
+
+                    <div class="panel-card h-100">
+
+                        <div class="panel-card-header">
+
+                            <div>
+
+                                <h4>Notification Preferences</h4>
+
+                                <p>Choose how you would like to receive updates.</p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="panel-account-list">
+
+                           <div class="panel-account-item panel-notification-item">
+
+                                <div>
+
+                                    <h6>Email Notifications</h6>
+
+                                    <small>Projects & account updates</small>
+
+                                </div>
+
+                                <div class="form-check form-switch">
+
+                                    <input class="form-check-input" type="checkbox" checked>
+
+                                </div>
+
+                            </div>
+
+                           <div class="panel-account-item panel-notification-item">
+
+                                <div>
+
+                                    <h6>SMS Alerts</h6>
+
+                                    <small>Critical notifications</small>
+
+                                </div>
+
+                                <div class="form-check form-switch">
+
+                                    <input class="form-check-input" type="checkbox">
+
+                                </div>
+
+                            </div>
+
+                            <div class="panel-account-item panel-notification-item">
+
+                                <div>
+
+                                    <h6>Project Updates</h6>
+
+                                    <small>Receive project progress updates</small>
+
+                                </div>
+
+                                <div class="form-check form-switch">
+
+                                    <input class="form-check-input" type="checkbox" checked>
+
+                                </div>
+
+                            </div>
+
+                            <div class="panel-account-item panel-notification-item">
+
+                                <div>
+
+                                    <h6>Invoice Reminders</h6>
+
+                                    <small>Payment due notifications</small>
+
+                                </div>
+
+                                <div class="form-check form-switch">
+
+                                    <input class="form-check-input" type="checkbox" checked>
+
+                                </div>
+
+                            </div>
+
+                           <div class="panel-account-item panel-notification-item">
+
+                                <div>
+
+                                    <h6>Marketing Emails</h6>
+
+                                    <small>Offers & product announcements</small>
+
+                                </div>
+
+                                <div class="form-check form-switch">
+
+                                    <input class="form-check-input" type="checkbox">
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <hr class="my-4">
+
+                        <h5 class="mb-3">Connected Accounts</h5>
+
+                        <div class="panel-account-list">
+
+                            <div class="panel-account-item">
+
+                                <div>
+
+                                    <h6><i class="bi bi-google me-2 text-danger"></i>Google</h6>
+
+                                    <small>Connected</small>
+
+                                </div>
+
+                                <button class="panel-outline-btn">
+
+                                    Disconnect
+
+                                </button>
+
+                            </div>
+
+                            <div class="panel-account-item">
+
+                                <div>
+
+                                    <h6><i class="bi bi-microsoft me-2"></i>Microsoft</h6>
+
+                                    <small>Not Connected</small>
+
+                                </div>
+
+                                <button class="panel-primary-btn">
+
+                                    Connect
+
+                                </button>
+
+                            </div>
+
+                            <div class="panel-account-item">
+
+                                <div>
+
+                                    <h6><i class="bi bi-github me-2"></i>GitHub</h6>
+
+                                    <small>Connected</small>
+
+                                </div>
+
+                                <button class="panel-outline-btn">
+
+                                    Disconnect
+
+                                </button>
+
+                            </div>
+
+                            <div class="panel-account-item">
+
+                                <div>
+
+                                    <h6><i class="bi bi-linkedin me-2 text-primary"></i>LinkedIn</h6>
+
+                                    <small>Connected</small>
+
+                                </div>
+
+                                <button class="panel-outline-btn">
+
+                                    Disconnect
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+        </main>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/panel.js"></script>
+
+</body>
+
+</html>

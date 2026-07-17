@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Service | Client </title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Main favicon -->
+    <link rel="icon" href="favicon.ico">
+    <!-- PNG favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+    <!-- Apple -->
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+    <!-- Android -->
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/images/android-chrome-512x512.png">
+    <!-- Manifest -->
+    <link rel="manifest" href="assets/images/site.webmanifest">
+    <!--- Icon Code --->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/panel.css">
+    <link rel="stylesheet" href="assets/css/loader.css">
+
+</head>
+
+<body class="panel-body">
+
+    <!---- Sidebar ---->
+
+    <aside class="panel-sidebar">
+
+        <div class="panel-logo">
+
+            <a href="index.html"> <img src="assets/images/barnd-logo.png" alt="Logo"></a>
+
+        </div>
+
+        <ul class="panel-menu">
+
+            <li><a href="client-dashboard.html"><i class="bi bi-speedometer2"></i><span>Dashboard</span></a></li>
+            <li><a href="client-projects.html"><i class="bi bi-kanban-fill"></i><span>My Projects</span></a></li>
+            <li><a href="client-services.html"><i class="bi bi-tools"></i><span>My Services</span></a></li>
+            <li><a href="client-invoices.html"><i class="bi bi-receipt-cutoff"></i><span>Invoices</span></a></li>
+            <li><a href="client-support.html"><i class="bi bi-chat-dots-fill"></i><span>Support Tickets</span></a></li>
+            <li><a href="client-profile.html"><i class="bi bi-person-circle"></i><span>My Profile</span></a></li>
+
+        </ul>
+
+        <div class="panel-sidebar-footer">
+
+            <a href="login.html"><i class="bi bi-box-arrow-right"></i><span>Logout</span></a>
+
+        </div>
+
+    </aside>
+
+    <!---- Main ----->
+
+    <div class="panel-main">
+
+        <!--- Top Navbar --->
+
+        <header class="panel-navbar">
+
+            <div class="panel-navbar-left">
+
+                <button class="panel-sidebar-toggle"><i class="bi bi-list"></i></button>
+
+            </div>
+
+            <div class="panel-navbar-right">
+                <button class="panel-icon-btn"><i class="bi bi-bell-fill"></i><span class="panel-dot"></span></button>
+                <div class="panel-profile">
+                    <a href="client-profile.html"><img
+                            src="https://i.pinimg.com/736x/7e/46/c6/7e46c6d2798eff446b365c5246f4c9ca.jpg" alt="Client">
+                    </a>
+                    <div>
+                        <h6>John Anderson</h6>
+                        <p>Premium Client</p>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+
+        <!--- Content ---->
+
+        <main class="panel-content">
+
+
+            <!--- Page Header --->
+
+            <div class="panel-page-header">
+
+                <div class="panel-page-info">
+
+                    <span class="panel-page-subtitle">
+
+                        Client Portal
+
+                    </span>
+
+                    <h2>
+
+                        My Projects
+
+                    </h2>
+
+                    <p>
+
+                        Track the progress of your ongoing projects, review completed work, and stay updated with every
+                        milestone.
+
+                    </p>
+
+                </div>
+
+                <div class="panel-page-action">
+
+                    <button class="panel-primary-btn">
+
+                        <i class="bi bi-chat-dots-fill"></i>
+
+                        Contact Project Manager
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!--- Project Toolbar --->
+
+            <div class="panel-toolbar">
+
+                <div class="panel-toolbar-left">
+
+                    <div class="panel-search-box">
+
+                        <i class="bi bi-search"></i>
+
+                        <input type="text" id="projectSearch" placeholder="Search projects...">
+
+                    </div>
+
+                </div>
+
+                <div class="panel-toolbar-right">
+
+                    <div class="panel-filter-wrap">
+
+                        <select class="form-select panel-filter" id="statusFilter">
+
+                            <option value="">All Status</option>
+                            <option>In Progress</option>
+                            <option>Review</option>
+                            <option> Completed</option>
+                            <option>On Hold</option>
+
+                        </select>
+                        <i class="bi bi-chevron-down"></i>
+
+                    </div>
+
+                    <div class="panel-filter-wrap">
+                        <select class="form-select panel-filter" id="serviceFilter">
+
+                            <option value="">All Services</option>
+                            <option>Web Development</option>
+                            <option>Mobile App</option>
+                            <option>UI / UX Design</option>
+                            <option>SEO</option>
+                            <option>Digital Marketing</option>
+
+                        </select>
+                        <i class="bi bi-chevron-down"></i>
+
+                    </div>
+
+                    <div class="panel-filter-wrap">
+                        <select class="form-select panel-filter" id="sortFilter">
+
+                            <option>Sort By</option>
+                            <option>Latest</option>
+                            <option>Deadline</option>
+                            <option>Progress</option>
+                            <option>A-Z</option>
+
+                        </select>
+                        <i class="bi bi-chevron-down"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!--- Project Summary --->
+
+            <div class="row g-4 mt-2">
+
+                <div class="col-xl-3 col-md-6">
+
+                    <div class="panel-stat-card">
+
+                        <div class="panel-stat-icon">
+
+                            <i class="bi bi-kanban-fill"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>03</h3>
+
+                            <p>Active Projects</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-xl-3 col-md-6">
+
+                    <div class="panel-stat-card">
+
+                        <div class="panel-stat-icon">
+
+                            <i class="bi bi-check-circle-fill"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>08</h3>
+
+                            <p>Completed Tasks</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-xl-3 col-md-6">
+
+                    <div class="panel-stat-card">
+
+                        <div class="panel-stat-icon">
+
+                            <i class="bi bi-hourglass-split"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>02</h3>
+
+                            <p>Pending Reviews</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-xl-3 col-md-6">
+
+                    <div class="panel-stat-card">
+
+                        <div class="panel-stat-icon">
+
+                            <i class="bi bi-calendar-event-fill"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>25 Jul</h3>
+
+                            <p>Next Deadline</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!--- Project Cards --->
+
+            <div class="row g-4 mt-2">
+
+                <!--- Project Card 1 --->
+
+                <div class="col-xl-4 col-lg-6">
+
+                    <div class="panel-project-card">
+
+                        <div class="panel-project-top">
+
+                            <div class="panel-project-logo">
+
+                                <i class="bi bi-globe2"></i>
+
+                            </div>
+
+                            <span class="panel-badge panel-progress">
+
+                                In Progress
+
+                            </span>
+
+                        </div>
+
+                        <h4>
+
+                            Corporate Website
+
+                        </h4>
+
+                        <p>
+
+                            Responsive business website with CMS integration and SEO optimization.
+
+                        </p>
+
+                        <div class="panel-project-service">
+
+                            <i class="bi bi-code-slash"></i>
+
+                            Web Development
+
+                        </div>
+
+                        <div class="panel-project-progress">
+
+                            <div class="d-flex justify-content-between mb-2">
+
+                                <span>Progress</span>
+
+                                <strong>75%</strong>
+
+                            </div>
+
+                            <div class="progress">
+
+                                <div class="progress-bar bg-primary" style="width:75%;">
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="panel-project-meta">
+
+                            <div>
+
+                                <small>Project Manager</small>
+
+                                <h6>David Wilson</h6>
+
+                            </div>
+
+                            <div>
+
+                                <small>Deadline</small>
+
+                                <h6>25 Jul 2026</h6>
+
+                            </div>
+
+                        </div>
+
+                        <div class="panel-project-team">
+
+                            <img src="https://i.pravatar.cc/100?img=11">
+
+                            <img src="https://i.pravatar.cc/100?img=12">
+
+                            <img src="https://i.pravatar.cc/100?img=13">
+
+                            <img src="https://i.pravatar.cc/100?img=14">
+
+                        </div>
+
+                        <button class="panel-primary-btn w-100 mt-4">
+
+                            <i class="bi bi-eye-fill"></i>
+
+                            View Details
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!--- Project Card 2 --->
+
+                <div class="col-xl-4 col-lg-6">
+
+                    <div class="panel-project-card">
+
+                        <div class="panel-project-top">
+
+                            <div class="panel-project-logo">
+
+                                <i class="bi bi-phone-fill"></i>
+
+                            </div>
+
+                            <span class="panel-badge panel-review">
+
+                                Review
+
+                            </span>
+
+                        </div>
+
+                        <h4>
+
+                            Restaurant Mobile App
+
+                        </h4>
+
+                        <p>
+
+                            Android & iOS application with online ordering and payment gateway.
+
+                        </p>
+
+                        <div class="panel-project-service">
+
+                            <i class="bi bi-phone"></i>
+
+                            Mobile Development
+
+                        </div>
+
+                        <div class="panel-project-progress">
+
+                            <div class="d-flex justify-content-between mb-2">
+
+                                <span>Progress</span>
+
+                                <strong>92%</strong>
+
+                            </div>
+
+                            <div class="progress">
+
+                                <div class="progress-bar bg-warning" style="width:92%;">
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="panel-project-meta">
+
+                            <div>
+
+                                <small>Project Manager</small>
+
+                                <h6>Sarah James</h6>
+
+                            </div>
+
+                            <div>
+
+                                <small>Deadline</small>
+
+                                <h6>30 Jul 2026</h6>
+
+                            </div>
+
+                        </div>
+
+                        <div class="panel-project-team">
+
+                            <img src="https://i.pravatar.cc/100?img=21">
+
+                            <img src="https://i.pravatar.cc/100?img=22">
+
+                            <img src="https://i.pravatar.cc/100?img=23">
+
+                        </div>
+
+                        <button class="panel-primary-btn w-100 mt-4">
+
+                            <i class="bi bi-eye-fill"></i>
+
+                            View Details
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!--- Project Card 3 --->
+
+                <div class="col-xl-4 col-lg-6">
+
+                    <div class="panel-project-card">
+
+                        <div class="panel-project-top">
+
+                            <div class="panel-project-logo">
+
+                                <i class="bi bi-search"></i>
+
+                            </div>
+
+                            <span class="panel-badge panel-completed">
+
+                                Completed
+
+                            </span>
+
+                        </div>
+
+                        <h4>
+
+                            SEO Optimization
+
+                        </h4>
+
+                        <p>
+
+                            Complete search engine optimization with analytics and monthly reports.
+
+                        </p>
+
+                        <div class="panel-project-service">
+
+                            <i class="bi bi-graph-up-arrow"></i>
+
+                            SEO Services
+
+                        </div>
+
+                        <div class="panel-project-progress">
+
+                            <div class="d-flex justify-content-between mb-2">
+
+                                <span>Progress</span>
+
+                                <strong>100%</strong>
+
+                            </div>
+
+                            <div class="progress">
+
+                                <div class="progress-bar bg-success" style="width:100%;">
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="panel-project-meta">
+
+                            <div>
+
+                                <small>Project Manager</small>
+
+                                <h6>Emily Brown</h6>
+
+                            </div>
+
+                            <div>
+
+                                <small>Completed</small>
+
+                                <h6>15 Jul 2026</h6>
+
+                            </div>
+
+                        </div>
+
+                        <div class="panel-project-team">
+
+                            <img src="https://i.pravatar.cc/100?img=31">
+
+                            <img src="https://i.pravatar.cc/100?img=32">
+
+                        </div>
+
+                        <button class="panel-primary-btn w-100 mt-4">
+
+                            <i class="bi bi-eye-fill"></i>
+
+                            View Details
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!--- Bottom Section --->
+
+            <div class="row g-4 mt-2">
+
+                <!--- Project Timeline --->
+
+                <div class="col-xl-6">
+
+                    <div class="panel-card h-100">
+
+                        <div class="panel-card-header">
+
+                            <div>
+
+                                <h4>Project Timeline</h4>
+
+                                <p>Current development progress.</p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="panel-project-timeline">
+
+                            <div class="panel-step completed">
+
+                                <div class="panel-step-icon">
+
+                                    <i class="bi bi-check-lg"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <h6>Requirement Gathering</h6>
+
+                                    <p>Completed on 02 Jul 2026</p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="panel-step completed">
+
+                                <div class="panel-step-icon">
+
+                                    <i class="bi bi-check-lg"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <h6>UI / UX Design</h6>
+
+                                    <p>Approved by Client</p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="panel-step completed">
+
+                                <div class="panel-step-icon">
+
+                                    <i class="bi bi-check-lg"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <h6>Frontend Development</h6>
+
+                                    <p>Completed Successfully</p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="panel-step active">
+
+                                <div class="panel-step-icon">
+
+                                    <i class="bi bi-gear-fill"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <h6>Backend Development</h6>
+
+                                    <p>Currently in Progress</p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="panel-step">
+
+                                <div class="panel-step-icon">
+
+                                    <i class="bi bi-circle"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <h6>Testing & QA</h6>
+
+                                    <p>Pending</p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="panel-step">
+
+                                <div class="panel-step-icon">
+
+                                    <i class="bi bi-circle"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <h6>Deployment</h6>
+
+                                    <p>Pending</p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!--- Project Team --->
+
+                <div class="col-xl-6">
+
+                    <div class="panel-card h-100">
+
+                        <div class="panel-card-header">
+
+                            <div>
+
+                                <h4>Project Team</h4>
+
+                                <p>Meet the people working on your project.</p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="panel-team-list">
+
+                            <div class="panel-team-member">
+
+                                <img src="https://i.pravatar.cc/100?img=11" alt="">
+
+                                <div>
+
+                                    <h6>David Wilson</h6>
+
+                                    <small>Project Manager</small>
+
+                                </div>
+
+                                <span class="panel-badge panel-completed">
+
+                                    Online
+
+                                </span>
+
+                            </div>
+
+                            <div class="panel-team-member">
+
+                                <img src="https://i.pravatar.cc/100?img=22" alt="">
+
+                                <div>
+
+                                    <h6>Sarah James</h6>
+
+                                    <small>UI / UX Designer</small>
+
+                                </div>
+
+                                <span class="panel-badge panel-progress">
+
+                                    Working
+
+                                </span>
+
+                            </div>
+
+                            <div class="panel-team-member">
+
+                                <img src="https://i.pravatar.cc/100?img=33" alt="">
+
+                                <div>
+
+                                    <h6>Kevin Martin</h6>
+
+                                    <small>Frontend Developer</small>
+
+                                </div>
+
+                                <span class="panel-badge panel-completed">
+
+                                    Online
+
+                                </span>
+
+                            </div>
+
+                            <div class="panel-team-member">
+
+                                <img src="https://i.pravatar.cc/100?img=44" alt="">
+
+                                <div>
+
+                                    <h6>Michael Lee</h6>
+
+                                    <small>Backend Developer</small>
+
+                                </div>
+
+                                <span class="panel-badge panel-review">
+
+                                    Busy
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!--- Project Documents --->
+
+                <div class="col-xl-6">
+
+                    <div class="panel-card h-100">
+
+                        <div class="panel-card-header">
+
+                            <div>
+
+                                <h4>Project Documents</h4>
+
+                                <p>Download project files anytime.</p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="panel-document-list">
+
+                            <div class="panel-document-item">
+
+                                <i class="bi bi-file-earmark-pdf-fill text-danger"></i>
+
+                                <div>
+
+                                    <h6>Project Proposal.pdf</h6>
+
+                                    <small>2.3 MB</small>
+
+                                </div>
+
+                                <button class="panel-action-btn">
+
+                                    <i class="bi bi-download"></i>
+
+                                </button>
+
+                            </div>
+
+                            <div class="panel-document-item">
+
+                                <i class="bi bi-file-earmark-word-fill text-primary"></i>
+
+                                <div>
+
+                                    <h6>Requirements.docx</h6>
+
+                                    <small>1.8 MB</small>
+
+                                </div>
+
+                                <button class="panel-action-btn">
+
+                                    <i class="bi bi-download"></i>
+
+                                </button>
+
+                            </div>
+
+                            <div class="panel-document-item">
+
+                                <i class="bi bi-file-earmark-image-fill text-success"></i>
+
+                                <div>
+
+                                    <h6>Homepage Design.png</h6>
+
+                                    <small>4.2 MB</small>
+
+                                </div>
+
+                                <button class="panel-action-btn">
+
+                                    <i class="bi bi-download"></i>
+
+                                </button>
+
+                            </div>
+
+                            <div class="panel-document-item">
+
+                                <i class="bi bi-file-earmark-zip-fill text-warning"></i>
+
+                                <div>
+
+                                    <h6>Source Files.zip</h6>
+
+                                    <small>25 MB</small>
+
+                                </div>
+
+                                <button class="panel-action-btn">
+
+                                    <i class="bi bi-download"></i>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!--- Recent Updates --->
+
+                <div class="col-xl-6">
+
+                    <div class="panel-card h-100">
+
+                        <div class="panel-card-header">
+
+                            <div>
+
+                                <h4>Recent Updates</h4>
+
+                                <p>Latest activity from your team.</p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="panel-update-list">
+
+                            <div class="panel-update-item">
+
+                                <i class="bi bi-check-circle-fill text-success"></i>
+
+                                <div>
+
+                                    <h6>Homepage Approved</h6>
+
+                                    <p>Your homepage design has been approved.</p>
+
+                                    <small>Today • 10:45 AM</small>
+
+                                </div>
+
+                            </div>
+
+                            <div class="panel-update-item">
+
+                                <i class="bi bi-code-slash text-primary"></i>
+
+                                <div>
+
+                                    <h6>Backend Development Started</h6>
+
+                                    <p>API integration work has begun.</p>
+
+                                    <small>Yesterday</small>
+
+                                </div>
+
+                            </div>
+
+                            <div class="panel-update-item">
+
+                                <i class="bi bi-upload text-warning"></i>
+
+                                <div>
+
+                                    <h6>New UI Uploaded</h6>
+
+                                    <p>Latest design screens were uploaded.</p>
+
+                                    <small>2 Days Ago</small>
+
+                                </div>
+
+                            </div>
+
+                            <div class="panel-update-item">
+
+                                <i class="bi bi-folder-check text-info"></i>
+
+                                <div>
+
+                                    <h6>Project Created</h6>
+
+                                    <p>The project was successfully initiated.</p>
+
+                                    <small>1 Week Ago</small>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/panel.js"></script>
+
+</body>
+
+</html>

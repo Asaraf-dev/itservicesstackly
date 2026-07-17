@@ -1,0 +1,491 @@
+body p {
+    font-family: 'poppins', sans-serif;
+    font-weight: 400 !important;
+}
+
+body h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600 !important;
+}
+
+/*--- Section ---*/
+
+.error404-section{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    background:#08111F;
+    padding:20px 0;
+}
+
+/*--- Background Glow ---*/
+
+.error404-glow{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(180px);
+    opacity:.18;
+}
+
+.error404-glow-left{
+    width:550px;
+    height:550px;
+    background:#2563EB;
+    top:-180px;
+    left:-180px;
+}
+
+.error404-glow-right{
+    width:450px;
+    height:450px;
+    background:#7C3AED;
+    bottom:-150px;
+    right:-150px;
+}
+
+/*--- Grid ---*/
+
+.error404-grid{
+    position:absolute;
+    inset:0;
+    background-image:
+    linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+    background-size:45px 45px;
+    mask-image:radial-gradient(circle,#000 45%,transparent 100%);
+    pointer-events:none;
+}
+
+/*--- Card ---*/
+
+.error404-card{
+    position:relative;
+    z-index:5;
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(22px);
+    -webkit-backdrop-filter:blur(22px);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:35px;
+    padding:30px;
+    overflow:hidden;
+    box-shadow:0 30px 70px rgba(0,0,0,.35);
+}
+
+/*--- Badge ---*/
+
+.error404-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:10px 20px;
+    border-radius:50px;
+    background:rgba(37,99,235,.12);
+    color:#60A5FA;
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+/*--- Title ---*/
+
+.error404-title{
+    margin:30px 0 10px;
+    font-size:100px;
+    font-weight:900;
+    line-height:1;
+    color:#fff;
+}
+
+.error404-title span{
+    color:#DFFF45;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 8px;
+}
+
+.error404-title span i{
+    font-size:.7em;
+}
+
+/*--- Heading ---*/
+
+.error404-heading{
+    color:#fff;
+    font-size:40px;
+    font-weight:800;
+    margin-bottom:20px;
+}
+
+/*--- Text ---*/
+
+.error404-text{
+    color:#AEB8C8;
+    font-size:17px;
+    line-height:1.9;
+    max-width:520px;
+    margin-bottom:35px;
+} 
+
+/*--- Button ---*/
+
+.error404-btn{
+    background:#DFFF45 !important;
+    color:#000;
+    border:none;
+    padding:16px 36px;
+    border-radius:60px;
+    font-weight:600 !important;
+    transition:.35s;
+}
+
+.error404-btn:hover{
+    transform:translateY(-6px);
+    color:#fff;
+    box-shadow:0 20px 40px rgba(37,99,235,.35);
+}
+
+.error404-btn i{
+    margin-right:8px;
+}
+
+/*--- Links ---*/
+
+.error404-links{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    margin-top:35px;
+    flex-wrap:wrap;
+}
+
+.error404-links a{
+    color:#CBD5E1;
+    text-decoration:none;
+    transition:.35s;
+}
+
+.error404-links a:hover{
+    color:#DFFF45;
+}
+
+.error404-links span{
+    width:6px;
+    height:6px;
+    border-radius:50%;
+    background:#2563EB;
+}
+
+/*--- Image ---*/
+
+.error404-image{
+    position:relative;
+    min-height:500px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.error404-circle{
+    position:absolute;
+    width:360px;
+    height:360px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#2563EB,#7C3AED);
+    filter:blur(60px);
+    opacity:.25;
+}
+
+.error404-workspace{
+    position:relative;
+    width:200px;
+    z-index:3;
+    filter:drop-shadow(0 30px 60px rgba(0,0,0,.35));
+}
+
+.error404-cloud{
+    position:absolute;
+    width:90px;
+    top:20px;
+    left:40px;
+    z-index:4;
+}
+
+.error404-server{
+    position:absolute;
+    width:120px;
+    right:20px;
+    bottom:40px;
+    z-index:4;
+}
+
+.error404-security{
+    position:absolute;
+    width:90px;
+    left:30px;
+    bottom:70px;
+    z-index:4;
+}
+
+/*--- Responsive ---*/
+
+@media(max-width:991px){
+
+.error404-card{
+padding:30px 30px;
+text-align:center;
+}
+
+.error404-text{
+margin:auto;
+}
+
+.error404-links{
+justify-content:center;
+}
+
+.error404-image{
+margin-top:0px;
+min-height:300px;
+}
+
+.error404-workspace{
+width:150px;
+}
+
+.error404-circle{
+width:260px;
+height:260px;
+}
+
+}
+
+@media(max-width:767px){
+
+.error404-section{
+padding:40px 15px;
+}
+
+.error404-card{
+padding:20px 20px;
+border-radius:25px;
+}
+
+.error404-heading{
+font-size:34px;
+}
+
+.error404-text{
+font-size:15px;
+}
+
+.error404-btn{
+width:100%;
+}
+
+.error404-links{
+justify-content:center;
+gap:14px;
+}
+
+.error404-workspace{
+width:150px;
+}
+
+.error404-circle{
+width:180px;
+height:180px;
+}
+
+}
+
+/*--- Floating Workspace ---*/
+
+.error404-workspace{
+animation:errorFloat 6s ease-in-out infinite;
+transition:.25s linear;
+will-change:transform;
+}
+
+@keyframes errorFloat{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-18px);
+}
+
+}
+
+/*--- Floating Icons ---*/
+
+.error404-cloud,
+.error404-server,
+.error404-security,
+.error404-circle{
+transition:.25s linear;
+will-change:transform;
+}
+
+/*--- Animated Glow ---*/
+
+.error404-glow-left{
+animation:errorGlowLeft 10s ease-in-out infinite alternate;
+}
+
+.error404-glow-right{
+animation:errorGlowRight 10s ease-in-out infinite alternate;
+}
+
+@keyframes errorGlowLeft{
+
+from{
+transform:translate(0,0);
+}
+
+to{
+transform:translate(40px,40px);
+}
+
+}
+
+@keyframes errorGlowRight{
+
+from{
+transform:translate(0,0);
+}
+
+to{
+transform:translate(-40px,-40px);
+}
+
+}
+
+/*--- Grid Animation ---*/
+
+.error404-grid{
+animation:errorGridMove 15s linear infinite;
+}
+
+@keyframes errorGridMove{
+
+from{
+background-position:0 0;
+}
+
+to{
+background-position:45px 45px;
+}
+}
+
+/*--- Power Icon ---*/
+
+.error404-title span{
+
+animation:errorPower 2s ease-in-out infinite;
+
+}
+
+@keyframes errorPower{
+
+0%,100%{
+
+color:#DFFF45;
+
+text-shadow:
+0 0 8px #DFFF45,
+0 0 20px #DFFF45;
+
+}
+
+50%{
+
+color:#60A5FA;
+
+text-shadow:
+0 0 10px #2563EB,
+0 0 30px #2563EB;
+
+}
+
+}
+
+/*--- Card Hover ---*/
+
+.error404-card{
+
+transition:.4s;
+
+}
+
+.error404-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:
+0 35px 80px rgba(0,0,0,.45);
+
+}
+
+/*--- Button Shine ---*/
+
+.error404-btn{
+
+overflow:hidden;
+
+position:relative;
+
+}
+
+.error404-btn::before{
+
+content:"";
+position:absolute;
+top:-100%;
+left:-120%;
+width:60%;
+height:300%;
+background:rgba(255,255,255,.3);
+transform:rotate(25deg);
+transition:.8s;
+
+}
+
+.error404-btn:hover::before{
+
+left:150%;
+
+}
+
+/*--- Button Ripple ---*/
+
+.error404-btn::after{
+
+content:"";
+position:absolute;
+left:var(--x);
+top:var(--y);
+width:0;
+height:0;
+background:rgba(255,255,255,.18);
+border-radius:50%;
+transform:translate(-50%,-50%);
+transition:.6s;
+
+}
+
+.error404-btn:hover::after{
+width:320px;
+height:320px;
+
+}
