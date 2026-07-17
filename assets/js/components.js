@@ -18,8 +18,6 @@ async function initWebsite() {
 
         await Promise.all([
 
-            loadComponent("loader", "assets/components/loader.html"),
-
             loadComponent("navbar", "assets/components/navbar.html"),
 
             loadComponent("footer", "assets/components/footer.html")

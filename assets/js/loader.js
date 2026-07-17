@@ -2,114 +2,69 @@
 
 (() => {
 
-let loader = null;
+    const loader = document.querySelector(".site-loader");
 
-/*--- Get Loader ---*/
+    if (!loader) return;
 
-function getLoader(){
+    /*--- Show ---*/
 
-    loader = document.querySelector(".site-loader");
+    function showLoader() {
 
-    return loader;
+        loader.classList.remove("site-loader-hide");
 
-}
-
-/*--- Show Loader ---*/
-
-function showLoader(){
-
-    const loader = getLoader();
-
-    if(!loader) return;
-
-    loader.classList.remove("site-loader-hide");
-
-}
+    }
 
 /*--- Hide Loader ---*/
 
-function hideLoader(){
+function hideLoader() {
 
-    const loader = getLoader();
+    const loader = document.querySelector(".site-loader");
 
-    if(!loader) return;
+    if (!loader) return;
 
-    requestAnimationFrame(() => {
+    setTimeout(() => {
 
-        setTimeout(() => {
+        loader.classList.add("site-loader-hide");
 
-            loader.classList.add("site-loader-hide");
-
-        },300);
-
-    });
+    }, 1000); // Keep loader visible for 1 second
 
 }
 
-/*--- Components Loaded ---*/
+    /*--- Initial Load ---*/
 
-document.addEventListener("componentsLoaded", () => {
+    document.addEventListener("componentsLoaded", hideLoader);
 
-    showLoader();
+    window.addEventListener("load", hideLoader);
 
-    requestAnimationFrame(() => {
+    /*--- Page Navigation ---*/
 
-        hideLoader();
+    document.addEventListener("click", function (e) {
 
-    });
+        const link = e.target.closest("a");
 
-});
+        if (!link) return;
 
-/*--- Page Transition ---*/
+        const href = link.getAttribute("href");
 
-document.addEventListener("click",(e)=>{
+        if (
+            !href ||
+            href.startsWith("#") ||
+            href.startsWith("mailto:") ||
+            href.startsWith("tel:") ||
+            href.startsWith("javascript:") ||
+            href.startsWith("http") ||
+            link.target === "_blank"
+        ) {
+            return;
+        }
 
-    const link = e.target.closest("a");
+        e.preventDefault();
 
-    if(!link) return;
+        showLoader();
 
-    const href = link.getAttribute("href");
-
-    if(
-        !href ||
-        href.startsWith("#") ||
-        href.startsWith("mailto:") ||
-        href.startsWith("tel:") ||
-        href.startsWith("javascript:") ||
-        href.startsWith("http") ||
-        link.target === "_blank"
-    ){
-        return;
-    }
-
-    e.preventDefault();
-
-    showLoader();
-
-    document.body.classList.add("page-transition");
-
-    setTimeout(()=>{
-
+        /* Navigate immediately */
         window.location.href = href;
 
-    },350);
-
-});
-
-/*--- Browser Back / Forward ---*/
-
-window.addEventListener("pageshow",()=>{
-
-    hideLoader();
-
-});
-
-/*--- Restore Loader State ---*/
-
-window.addEventListener("beforeunload",()=>{
-
-    showLoader();
-
-});
+    });
 
 })();
