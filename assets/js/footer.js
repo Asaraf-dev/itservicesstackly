@@ -1,92 +1,113 @@
-/*--- FOOTER SCROLL REVEAL ---*/
+/*---FOOTER ---*/
 
-const footerObserver = new IntersectionObserver((entries) => {
+document.addEventListener("componentsLoaded", () => {
 
-    entries.forEach(entry => {
+    /*--- Footer Reveal Animation ---*/
 
-        if (entry.isIntersecting) {
+    const footerItems = document.querySelectorAll(
+        ".index-footer-company, .index-footer-links, .index-footer-contact"
+    );
 
-            entry.target.classList.add("index-footer-show");
+    if (footerItems.length) {
 
-        }
+        const footerObserver = new IntersectionObserver((entries) => {
 
-    });
+            entries.forEach(entry => {
 
-}, {
-    threshold: 0.15
-});
+                if (entry.isIntersecting) {
 
-document.querySelectorAll(
-    ".index-footer-company, .index-footer-links, .index-footer-contact"
-).forEach(item => {
+                    entry.target.classList.add("index-footer-show");
+                    footerObserver.unobserve(entry.target);
 
-    item.classList.add("index-footer-hidden");
-    footerObserver.observe(item);
-
-});
-
-
-/*--- SCROLL TO TOP BUTTON ---*/
-
-const topBtn = document.querySelector(".index-footer-top");
-
-window.addEventListener("scroll", () => {
-
-    if (window.scrollY > 400) {
-
-        topBtn.classList.add("index-footer-top-show");
-
-    } else {
-
-        topBtn.classList.remove("index-footer-top-show");
-
-    }
-
-});
-
-topBtn.addEventListener("click", () => {
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-});
-
-
-/*--- SOCIAL ICON FLOAT ---*/
-
-document.querySelectorAll(".index-footer-social a").forEach((icon, index) => {
-
-    setTimeout(() => {
-
-        setInterval(() => {
-
-            icon.animate([
-
-                {
-                    transform: "translateY(0px)"
-                },
-
-                {
-                    transform: "translateY(-6px)"
-                },
-
-                {
-                    transform: "translateY(0px)"
                 }
-
-            ], {
-
-                duration: 2200,
-
-                iterations: 1,
-
-                easing: "ease-in-out"
 
             });
 
-        }, 2200);
+        }, {
+            threshold: 0.15
+        });
 
-    }, index * 200);
+        footerItems.forEach(item => {
+
+            item.classList.add("index-footer-hidden");
+            footerObserver.observe(item);
+
+        });
+
+    }
+
+    /*--- Scroll To Top Button ---*/
+
+    const topBtn = document.querySelector(".index-footer-top");
+
+    if (topBtn) {
+
+        const toggleTopButton = () => {
+
+            if (window.scrollY > 400) {
+
+                topBtn.classList.add("index-footer-top-show");
+
+            } else {
+
+                topBtn.classList.remove("index-footer-top-show");
+
+            }
+
+        };
+
+        toggleTopButton();
+
+        window.addEventListener("scroll", toggleTopButton);
+
+        topBtn.addEventListener("click", () => {
+
+            window.scrollTo({
+
+                top: 0,
+
+                behavior: "smooth"
+
+            });
+
+        });
+
+    }
+
+    /*--- Floating Social Icons ---*/
+
+    const socialIcons = document.querySelectorAll(".index-footer-social a");
+
+    if (socialIcons.length) {
+
+        socialIcons.forEach((icon, index) => {
+
+            setTimeout(() => {
+
+                setInterval(() => {
+
+                    icon.animate([
+                        {
+                            transform: "translateY(0px)"
+                        },
+                        {
+                            transform: "translateY(-6px)"
+                        },
+                        {
+                            transform: "translateY(0px)"
+                        }
+                    ], {
+                        duration: 2200,
+                        iterations: 1,
+                        easing: "ease-in-out"
+                    });
+
+                }, 2200);
+
+            }, index * 180);
+
+        });
+
+    }
 
 });

@@ -1,81 +1,120 @@
 /*--- Wait Components ---*/
 
-document.addEventListener("componentsLoaded",()=>{
+document.addEventListener("componentsLoaded", () => {
 
-const loader=document.querySelector(".site-loader");
+    const loader = document.querySelector(".site-loader");
 
-const progressBar=document.querySelector(".site-loader-progress-bar span");
+    const progressBar = document.querySelector(".site-loader-progress-bar span");
 
-const percent=document.querySelector(".site-loader-percent");
+    const percent = document.querySelector(".site-loader-percent");
 
-const status=document.querySelector(".site-loader-status");
+    const status = document.querySelector(".site-loader-status");
 
-const messages=[
+    if (!loader || !progressBar || !percent || !status) {
+        return;
+    }
 
-"Initializing Experience...",
+    const messages = [
 
-"Loading Assets...",
+        "Initializing Experience...",
 
-"Preparing Interface...",
+        "Loading Assets...",
 
-"Optimizing Performance...",
+        "Preparing Interface...",
 
-"Launching Website..."
+        "Optimizing Performance...",
 
-];
+        "Launching Website..."
 
-let progress=0;
+    ];
 
-const timer=setInterval(()=>{
+    let progress = 0;
 
-progress++;
+    const timer = setInterval(() => {
 
-progressBar.style.width=progress+"%";
+        progress++;
 
-percent.innerHTML=progress+"%";
+        progressBar.style.width = progress + "%";
 
-if(progress<20){
+        percent.innerHTML = progress + "%";
 
-status.innerHTML=messages[0];
+        if (progress < 20) {
 
-}
+            status.innerHTML = messages[0];
 
-else if(progress<45){
+        }
 
-status.innerHTML=messages[1];
+        else if (progress < 45) {
 
-}
+            status.innerHTML = messages[1];
 
-else if(progress<70){
+        }
 
-status.innerHTML=messages[2];
+        else if (progress < 70) {
 
-}
+            status.innerHTML = messages[2];
 
-else if(progress<90){
+        }
 
-status.innerHTML=messages[3];
+        else if (progress < 90) {
 
-}
+            status.innerHTML = messages[3];
 
-else{
+        }
 
-status.innerHTML=messages[4];
+        else {
 
-}
+            status.innerHTML = messages[4];
 
-if(progress>=100){
+        }
 
-clearInterval(timer);
+        if (progress >= 100) {
 
-setTimeout(()=>{
+            clearInterval(timer);
 
-loader.classList.add("site-loader-hide");
+            setTimeout(() => {
 
-},400);
+                loader.classList.add("site-loader-hide");
 
-}
+            }, 400);
 
-},18);
+        }
+
+    }, 18);
+
+});
+
+/*--- Page Transition Loader ---*/
+
+document.addEventListener("click", function (e) {
+
+    const link = e.target.closest("a");
+
+    if (!link) return;
+
+    const href = link.getAttribute("href");
+
+    if (
+        !href ||
+        href.startsWith("#") ||
+        href.startsWith("mailto:") ||
+        href.startsWith("tel:") ||
+        href.startsWith("javascript:") ||
+        link.target == "_blank"
+    ) {
+        return;
+    }
+
+    e.preventDefault();
+
+    const loader = document.querySelector(".site-loader");
+
+    loader.classList.remove("site-loader-hide");
+
+    setTimeout(() => {
+
+        window.location.href = href;
+
+    }, 350);
 
 });
