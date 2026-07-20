@@ -6,6 +6,10 @@
 
     if (!loader) return;
 
+    /*--- Loader Delay (Milliseconds) ---*/
+
+    const LOADER_DELAY = 5000; // 5000 = 5 seconds | 8000 = 8 seconds
+
     /*--- Show Loader ---*/
 
     function showLoader() {
@@ -30,25 +34,15 @@
 
             loader.style.visibility = "hidden";
 
-        }, 1000);
+        }, LOADER_DELAY);
 
     }
 
-    /*--- Components Loaded ---*/
+    /*--- Initial Load ---*/
 
-    document.addEventListener("componentsLoaded", () => {
+    document.addEventListener("componentsLoaded", hideLoader);
 
-        hideLoader();
-
-    });
-
-    /*--- Window Loaded ---*/
-
-    window.addEventListener("load", () => {
-
-        hideLoader();
-
-    });
+    window.addEventListener("load", hideLoader);
 
     /*--- Browser Back / Forward ---*/
 
@@ -79,7 +73,8 @@
             href.startsWith("tel:") ||
             href.startsWith("javascript:") ||
             href.startsWith("http") ||
-            link.target === "_blank"
+            link.target === "_blank" ||
+            link.hasAttribute("download")
         ) {
             return;
         }
@@ -88,11 +83,11 @@
 
         showLoader();
 
-        requestAnimationFrame(() => {
+        setTimeout(() => {
 
             window.location.href = href;
 
-        });
+        }, 100);
 
     });
 
