@@ -8,7 +8,7 @@
 
     /*--- Loader Delay (Milliseconds) ---*/
 
-    const LOADER_DELAY = 5000; // 5000 = 5 seconds | 8000 = 8 seconds
+    const LOADER_DELAY = 8000; // 8 Seconds
 
     /*--- Show Loader ---*/
 
@@ -24,21 +24,21 @@
 
     /*--- Hide Loader ---*/
 
- function hideLoader() {
+    function hideLoader() {
 
-    setTimeout(() => {
+        setTimeout(() => {
 
-        loader.classList.add("site-loader-hide");
+            loader.classList.add("site-loader-hide");
 
-        loader.style.opacity = "0";
+            loader.style.opacity = "0";
 
-        loader.style.visibility = "hidden";
+            loader.style.visibility = "hidden";
 
-    }, 12000); // 12 seconds
+        }, LOADER_DELAY);
 
-}
+    }
 
-    /*--- Initial Load ---*/
+    /*--- Initial Page Load ---*/
 
     document.addEventListener("componentsLoaded", hideLoader);
 
@@ -46,13 +46,13 @@
 
     /*--- Browser Back / Forward ---*/
 
-    window.addEventListener("pageshow", () => {
+    window.addEventListener("pageshow", (event) => {
 
-        loader.classList.add("site-loader-hide");
+        if (event.persisted) {
 
-        loader.style.opacity = "0";
+            hideLoader();
 
-        loader.style.visibility = "hidden";
+        }
 
     });
 
