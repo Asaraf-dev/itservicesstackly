@@ -7302,7 +7302,40 @@ transform:translateY(0);
 
 /*--- Our Team Section Start ---*/
 
-/*--- Our Team Section ---*/
+
+/*--- Service Card ---*/
+
+.service-list-card{
+    display:flex;
+    flex-direction:column;
+    height:100%;
+}
+
+/*--- Card Content ---*/
+
+.service-list-content{
+    display:flex;
+    flex-direction:column;
+    flex:1;
+}
+
+/*--- Description ---*/
+
+.service-list-content p{
+    flex:1;
+    margin-bottom:30px;
+}
+
+/*--- Learn More ---*/
+
+.service-list-content a{
+    margin-top:auto;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+}
+
+/**/
 
 .about-team-section {
     position: relative;
@@ -9580,6 +9613,39 @@ transform:translateY(0);
     }
 
 }
+
+@media(max-width:767px){
+
+    .portfolio-filter-buttons{
+
+        justify-content:flex-start;
+
+        overflow-x:auto;
+
+        overflow-y:hidden;
+
+        flex-wrap:nowrap;
+
+        padding-top:8px;
+
+        padding-bottom:12px;
+
+        margin-bottom:40px;
+
+        scrollbar-width:none;
+
+        -webkit-overflow-scrolling:touch;
+
+    }
+
+    .portfolio-filter-buttons::-webkit-scrollbar{
+
+        display:none;
+
+    }
+
+}
+
 
 /*---- Portfolio Filter Section End ----*/
 

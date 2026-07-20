@@ -36,67 +36,67 @@
 
 <body>
 
-   <!--- Site Loader --->
+    <!--- Site Loader --->
 
-<div class="site-loader">
+    <div class="site-loader">
 
-    <!--- Background --->
+        <!--- Background --->
 
-    <div class="site-loader-bg"></div>
+        <div class="site-loader-bg"></div>
 
-    <!--- Grid --->
+        <!--- Grid --->
 
-    <div class="site-loader-grid"></div>
+        <div class="site-loader-grid"></div>
 
-    <!--- Particles --->
+        <!--- Particles --->
 
-    <span class="site-loader-particle site-loader-particle-1"></span>
-    <span class="site-loader-particle site-loader-particle-2"></span>
-    <span class="site-loader-particle site-loader-particle-3"></span>
+        <span class="site-loader-particle site-loader-particle-1"></span>
+        <span class="site-loader-particle site-loader-particle-2"></span>
+        <span class="site-loader-particle site-loader-particle-3"></span>
 
-    <!--- Content --->
+        <!--- Content --->
 
-    <div class="site-loader-content">
+        <div class="site-loader-content">
 
-        <!--- Rings --->
+            <!--- Rings --->
 
-        <div class="site-loader-rings">
+            <div class="site-loader-rings">
 
-            <span class="site-loader-ring site-loader-ring-1"></span>
+                <span class="site-loader-ring site-loader-ring-1"></span>
 
-            <span class="site-loader-ring site-loader-ring-2"></span>
+                <span class="site-loader-ring site-loader-ring-2"></span>
 
-            <span class="site-loader-ring site-loader-ring-3"></span>
+                <span class="site-loader-ring site-loader-ring-3"></span>
 
-            <!--- Logo --->
+                <!--- Logo --->
 
-            <div class="site-loader-logo">
+                <div class="site-loader-logo">
 
-                <img src="assets/images/barnd-logo.png" alt="Stackly">
+                    <img src="assets/images/barnd-logo.webp" alt="Stackly">
+
+                </div>
 
             </div>
 
+            <!--- Brand --->
+
+            <h2 class="site-loader-title">
+
+                STACKLY
+
+            </h2>
+
+            <!--- Subtitle --->
+
+            <p class="site-loader-subtitle">
+
+                Building Digital Excellence
+
+            </p>
+
         </div>
 
-        <!--- Brand --->
-
-        <h2 class="site-loader-title">
-
-            STACKLY
-
-        </h2>
-
-        <!--- Subtitle --->
-
-        <p class="site-loader-subtitle">
-
-            Building Digital Excellence
-
-        </p>
-
     </div>
-
-</div>
     <div id="navbar"></div>
 
     <!--- Hero Section --->
@@ -319,7 +319,7 @@
                         </span>
 
                         <h4>
-                            United Kingdom
+                            Salem, Tamil Nadu.
                         </h4>
 
                         <p>
@@ -474,8 +474,10 @@
 
                                             </label>
 
-                                            <input type="text" class="form-control" placeholder="Enter your full name"
-                                                required>
+                                            <input type="text" id="fullName" class="form-control"
+                                                placeholder="Enter your full name" required pattern="[A-Za-z ]+"
+                                                title="Please enter only alphabets."
+                                                oninput="this.value=this.value.replace(/[^A-Za-z ]/g,'')">
 
                                         </div>
 
@@ -508,8 +510,9 @@
 
                                             </label>
 
-                                            <input type="tel" class="form-control" placeholder="Enter your phone number"
-                                                required>
+                                            <input type="tel" id="phoneNumber" class="form-control"
+                                                placeholder="Enter your phone number" maxlength="10" pattern="[0-9]{10}"
+                                                title="Please enter a valid 10-digit phone number." required>
 
                                         </div>
 
@@ -575,7 +578,7 @@
                             <div class="contact-map-wrapper">
 
                                 <iframe
-                                    src="https://www.google.com/maps?q=1+Innovation+Plaza,+San+Francisco,+CA+94105,+USA&output=embed"
+                                    src="https://www.google.com/maps?q=MMR%20Complex,%20Chinna%20Thirupathi,%20Salem,%20Tamil%20Nadu%20636008&output=embed"
                                     allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                                 </iframe>
 
@@ -601,9 +604,8 @@
 
                                         <p>
 
-                                            Canary Wharf,
-                                            London E14 5AB,
-                                            United Kingdom
+                                            MMR Complex, Chinna Thirupathi,
+                                            Salem, Tamil Nadu 636008
 
                                         </p>
 

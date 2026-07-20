@@ -78,16 +78,76 @@ const contactForm = document.querySelector(".contact-form-card form");
 
 contactForm.addEventListener("submit", function (e) {
 
+    // Let the browser perform HTML5 validation first
+    if (!this.checkValidity()) {
+
+        e.preventDefault();
+        this.reportValidity();
+
+        return;
+
+    }
+
     e.preventDefault();
 
     const modal = new bootstrap.Modal(
-
         document.getElementById("contactSuccessModal")
-
     );
 
     modal.show();
 
     this.reset();
+
+});
+
+/*--- Name Validation ---*/
+
+const fullName = document.getElementById("fullName");
+
+fullName.addEventListener("input", function () {
+
+    this.value = this.value.replace(/[^A-Za-z ]/g, "");
+
+});
+
+
+/*--- Phone Validation ---*/
+
+const phoneNumber = document.getElementById("phoneNumber");
+
+phoneNumber.addEventListener("input", function () {
+
+    this.value = this.value.replace(/\D/g, "");
+
+    if (this.value.length > 10) {
+
+        this.value = this.value.slice(0, 10);
+
+    }
+
+});
+
+
+/*--- Form Validation ---*/
+
+document.querySelector("form").addEventListener("submit", function (e) {
+
+    if (!/^[A-Za-z ]+$/.test(fullName.value.trim())) {
+
+        fullName.focus();
+
+        e.preventDefault();
+
+        return;
+
+    }
+
+    if (!/^[0-9]{10}$/.test(phoneNumber.value)) {
+
+        phoneNumber.focus();
+
+        e.preventDefault();
+
+    }
 
 });

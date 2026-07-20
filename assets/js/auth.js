@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             e.preventDefault();
 
-            const username = loginForm.querySelector("input[type='text']").value.trim();
+            const username = loginForm.querySelector("input[type='email']").value.trim();
 
             const password = document.getElementById("loginPassword").value.trim();
 
@@ -194,23 +194,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /*--- REGISTER PAGE ---*/
 
+    /*--- REGISTER PAGE ---*/
+
     if (loginForm && isRegister) {
 
-        loginForm.addEventListener("submit", (e) => {
+        loginForm.addEventListener("submit", function (e) {
 
-            e.preventDefault();
+            if (!this.checkValidity()) {
 
-            const password = document.getElementById("loginPassword").value;
+                e.preventDefault();
 
-            const confirmPassword = document.getElementById("confirmPassword").value;
-
-            if (password !== confirmPassword) {
-
-                alert("Passwords do not match.");
+                this.reportValidity();
 
                 return;
 
             }
+
+            const password = document.getElementById("loginPassword");
+
+            const confirmPassword = document.getElementById("confirmPassword");
+
+            if (password.value !== confirmPassword.value) {
+
+                e.preventDefault();
+
+                confirmPassword.setCustomValidity("Passwords do not match.");
+
+                confirmPassword.reportValidity();
+
+                return;
+
+            }
+
+            confirmPassword.setCustomValidity("");
+
+            e.preventDefault();
 
             const modal = new bootstrap.Modal(
                 document.getElementById("registerSuccessModal")
@@ -225,6 +243,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     window.location.href = "login.html";
 
                 });
+
+        });
+
+        document.getElementById("confirmPassword").addEventListener("input", function () {
+
+            this.setCustomValidity("");
 
         });
 

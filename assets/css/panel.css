@@ -7743,3 +7743,83 @@ margin-left:auto;
 }
 
 }
+
+/**/
+.panel-service-card{
+    display:flex;
+    flex-direction:column;
+    height:100%;
+}
+
+.panel-service-btn{
+    margin-top:auto;
+    padding-top:24px;
+}
+
+/**/
+
+/*--- Profile Progress ---*/
+
+.panel-profile-progress{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    height:100%;
+
+}
+
+/*--- Progress Info ---*/
+
+.panel-progress-info{
+
+    text-align:center;
+
+    margin-top:30px;
+
+}
+
+.panel-progress-info h2{
+
+    font-size:56px;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+.panel-progress-info span{
+
+    color:var(--panel-text-light);
+
+}
+
+/*--- Desktop Button Alignment ---*/
+
+@media(min-width:992px){
+
+    .panel-card .panel-primary-btn{
+
+        min-width:240px;
+
+    }
+
+}
+
+/*--- Mobile ---*/
+
+@media(max-width:991px){
+
+    .panel-card .panel-primary-btn{
+
+        width:100%;
+
+        margin-top:30px;
+
+    }
+
+}
