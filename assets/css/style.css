@@ -7302,6 +7302,18 @@ transform:translateY(0);
 
 /*--- Our Team Section Start ---*/
 
+/*--- Social Icon Fix ---*/
+
+.about-team-social{
+    position: relative;
+    z-index: 9999;
+}
+
+.about-team-social a{
+    position: relative;
+    z-index: 9999;
+    pointer-events: auto;
+}
 
 /*--- Service Card ---*/
 
