@@ -6,39 +6,65 @@
 
     if (!loader) return;
 
-    /*--- Show ---*/
+    /*--- Show Loader ---*/
 
     function showLoader() {
 
         loader.classList.remove("site-loader-hide");
 
+        loader.style.opacity = "1";
+
+        loader.style.visibility = "visible";
+
     }
 
-/*--- Hide Loader ---*/
+    /*--- Hide Loader ---*/
 
-function hideLoader() {
+    function hideLoader() {
 
-    const loader = document.querySelector(".site-loader");
+        setTimeout(() => {
 
-    if (!loader) return;
+            loader.classList.add("site-loader-hide");
 
-    setTimeout(() => {
+            loader.style.opacity = "0";
+
+            loader.style.visibility = "hidden";
+
+        }, 1000);
+
+    }
+
+    /*--- Components Loaded ---*/
+
+    document.addEventListener("componentsLoaded", () => {
+
+        hideLoader();
+
+    });
+
+    /*--- Window Loaded ---*/
+
+    window.addEventListener("load", () => {
+
+        hideLoader();
+
+    });
+
+    /*--- Browser Back / Forward ---*/
+
+    window.addEventListener("pageshow", () => {
 
         loader.classList.add("site-loader-hide");
 
-    }, 1000); // Keep loader visible for 1 second
+        loader.style.opacity = "0";
 
-}
+        loader.style.visibility = "hidden";
 
-    /*--- Initial Load ---*/
+    });
 
-    document.addEventListener("componentsLoaded", hideLoader);
+    /*--- Internal Navigation ---*/
 
-    window.addEventListener("load", hideLoader);
-
-    /*--- Page Navigation ---*/
-
-    document.addEventListener("click", function (e) {
+    document.addEventListener("click", (e) => {
 
         const link = e.target.closest("a");
 
@@ -62,8 +88,11 @@ function hideLoader() {
 
         showLoader();
 
-        /* Navigate immediately */
-        window.location.href = href;
+        requestAnimationFrame(() => {
+
+            window.location.href = href;
+
+        });
 
     });
 
