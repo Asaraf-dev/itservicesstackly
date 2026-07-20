@@ -7304,17 +7304,13 @@ transform:translateY(0);
 
 /*--- Social Icon Fix ---*/
 
-.about-team-social{
-    position: relative;
-    z-index: 9999;
-}
+.about-team-section .container{
 
-.about-team-social a{
     position: relative;
-    z-index: 9999;
-    pointer-events: auto;
-}
 
+    z-index: 2;
+
+}
 /*--- Service Card ---*/
 
 .service-list-card{
