@@ -194,7 +194,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /*--- REGISTER PAGE ---*/
 
-    /*--- REGISTER PAGE ---*/
+    /*--- Phone Number Validation ---*/
+
+const phoneNumber = document.getElementById("phoneNumber");
+
+if (phoneNumber) {
+
+    phoneNumber.addEventListener("keydown", function (e) {
+
+        const allowedKeys = [
+            "Backspace",
+            "Delete",
+            "ArrowLeft",
+            "ArrowRight",
+            "Tab"
+        ];
+
+        if (
+            allowedKeys.includes(e.key) ||
+            /^[0-9]$/.test(e.key)
+        ) {
+            return;
+        }
+
+        e.preventDefault();
+
+    });
+
+    phoneNumber.addEventListener("input", function () {
+
+        this.value = this.value.replace(/\D/g, "");
+
+    });
+
+}
 
     if (loginForm && isRegister) {
 
