@@ -6,7 +6,7 @@
 
     if (!loader) return;
 
-    const LOADER_DELAY = 3000; // 3 seconds
+    const LOADER_DELAY = 2000; // 2 seconds
 
     /*--- Show Loader ---*/
 
