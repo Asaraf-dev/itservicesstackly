@@ -6,7 +6,7 @@
 
     if (!loader) return;
 
-    const LOADER_DELAY = 8000; // 8 seconds
+    const LOADER_DELAY = 5000; // 8 seconds
 
     /*--- Show Loader ---*/
 
