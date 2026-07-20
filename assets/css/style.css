@@ -778,19 +778,6 @@ h1 {
     top: -120px;
 }
 
-.index-atb-section::after {
-    content: "";
-    position: absolute;
-    width: 350px;
-    height: 350px;
-    background: #8b5cf6;
-    border-radius: 50%;
-    filter: blur(170px);
-    opacity: .18;
-    right: -120px;
-    bottom: -120px;
-}
-
 /*--- LEFT IMAGE ---*/
 
 .index-atb-image-wrapper {
