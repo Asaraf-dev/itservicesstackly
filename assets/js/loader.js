@@ -6,9 +6,7 @@
 
     if (!loader) return;
 
-    /*--- Loader Delay (Milliseconds) ---*/
-
-    const LOADER_DELAY = 8000; // 8 Seconds
+    const LOADER_DELAY = 8000; // 8 seconds
 
     /*--- Show Loader ---*/
 
@@ -38,21 +36,21 @@
 
     }
 
-    /*--- Initial Page Load ---*/
+    /*--- Components Loaded ---*/
 
     document.addEventListener("componentsLoaded", hideLoader);
+
+    /*--- Window Loaded ---*/
 
     window.addEventListener("load", hideLoader);
 
     /*--- Browser Back / Forward ---*/
 
-    window.addEventListener("pageshow", (event) => {
+    window.addEventListener("pageshow", () => {
 
-        if (event.persisted) {
+        showLoader();
 
-            hideLoader();
-
-        }
+        hideLoader();
 
     });
 
@@ -73,8 +71,7 @@
             href.startsWith("tel:") ||
             href.startsWith("javascript:") ||
             href.startsWith("http") ||
-            link.target === "_blank" ||
-            link.hasAttribute("download")
+            link.target === "_blank"
         ) {
             return;
         }
@@ -83,11 +80,11 @@
 
         showLoader();
 
-        setTimeout(() => {
+        requestAnimationFrame(() => {
 
             window.location.href = href;
 
-        }, 100);
+        });
 
     });
 
