@@ -7360,18 +7360,6 @@ transform:translateY(0);
     animation: aboutTeamGlow 10s ease-in-out infinite alternate;
 }
 
-.about-team-section::after {
-    content: "";
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    background: #7C3AED;
-    filter: blur(220px);
-    opacity: .10;
-    right: -180px;
-    bottom: -180px;
-}
 
 /*--- Header ---*/
 
