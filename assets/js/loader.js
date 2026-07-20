@@ -34,7 +34,7 @@
 
         loader.style.visibility = "hidden";
 
-    }, 8000); // 8 seconds
+    }, 12000); // 12 seconds
 
 }
 
