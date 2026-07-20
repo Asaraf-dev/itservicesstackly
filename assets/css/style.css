@@ -7302,15 +7302,7 @@ transform:translateY(0);
 
 /*--- Our Team Section Start ---*/
 
-/*--- Social Icon Fix ---*/
 
-.about-team-section .container{
-
-    position: relative;
-
-    z-index: 2;
-
-}
 /*--- Service Card ---*/
 
 .service-list-card{
@@ -10240,6 +10232,8 @@ transform:translateY(0);
 
 /*================================== Contact Page Start  ====================================*/
 
+/**/
+
 /*--- Contact Information Section ---*/
 
 .contact-info-section {
@@ -10433,7 +10427,7 @@ transform:translateY(0);
 
 .contact-info-card h4 {
     margin-bottom: 18px;
-    font-size: 25px;
+    font-size: 22px;
     font-weight: 700;
     line-height: 1.3;
     color: #fff;

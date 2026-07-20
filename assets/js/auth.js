@@ -194,66 +194,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /*--- REGISTER PAGE ---*/
 
-    /*--- Phone Number Validation ---*/
-
-const phoneNumber = document.getElementById("phoneNumber");
-
-if (phoneNumber) {
-
-    phoneNumber.addEventListener("keydown", function (e) {
-
-        const allowedKeys = [
-            "Backspace",
-            "Delete",
-            "ArrowLeft",
-            "ArrowRight",
-            "Tab"
-        ];
-
-        if (
-            allowedKeys.includes(e.key) ||
-            /^[0-9]$/.test(e.key)
-        ) {
-            return;
-        }
-
-        e.preventDefault();
-
-    });
-
-    phoneNumber.addEventListener("input", function () {
-
-        this.value = this.value.replace(/\D/g, "");
-
-    });
-
-}
-
     if (loginForm && isRegister) {
+
+        const password = document.getElementById("loginPassword");
+        const confirmPassword = document.getElementById("confirmPassword");
+
+        const passwordPattern =
+            /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&^#()_+\-=[\]{};':"\\|,.<>/?]).{8,}$/;
 
         loginForm.addEventListener("submit", function (e) {
 
+            e.preventDefault();
+
             if (!this.checkValidity()) {
 
-                e.preventDefault();
-
                 this.reportValidity();
-
                 return;
 
             }
 
-            const password = document.getElementById("loginPassword");
+            password.setCustomValidity("");
 
-            const confirmPassword = document.getElementById("confirmPassword");
+            if (!passwordPattern.test(password.value)) {
 
-            if (password.value !== confirmPassword.value) {
+                password.setCustomValidity(
+                    "Password must contain at least 8 characters, one uppercase letter, one lowercase letter, one number, and one special character."
+                );
 
-                e.preventDefault();
-
-                confirmPassword.setCustomValidity("Passwords do not match.");
-
-                confirmPassword.reportValidity();
+                password.reportValidity();
+                password.focus();
 
                 return;
 
@@ -261,7 +230,19 @@ if (phoneNumber) {
 
             confirmPassword.setCustomValidity("");
 
-            e.preventDefault();
+            if (password.value !== confirmPassword.value) {
+
+                confirmPassword.setCustomValidity("Passwords do not match.");
+
+                confirmPassword.reportValidity();
+                confirmPassword.focus();
+
+                return;
+
+            }
+
+            password.setCustomValidity("");
+            confirmPassword.setCustomValidity("");
 
             const modal = new bootstrap.Modal(
                 document.getElementById("registerSuccessModal")
@@ -269,22 +250,65 @@ if (phoneNumber) {
 
             modal.show();
 
-            document
-                .getElementById("registerSuccessBtn")
-                .addEventListener("click", () => {
+        });
 
-                    window.location.href = "login.html";
+        password.addEventListener("input", function () {
 
-                });
+            this.setCustomValidity("");
+
+            if (
+                confirmPassword.value !== "" &&
+                confirmPassword.value !== this.value
+            ) {
+
+                confirmPassword.setCustomValidity("Passwords do not match.");
+
+            } else {
+
+                confirmPassword.setCustomValidity("");
+
+            }
 
         });
 
-        document.getElementById("confirmPassword").addEventListener("input", function () {
+        confirmPassword.addEventListener("input", function () {
 
             this.setCustomValidity("");
+
+            if (this.value !== password.value) {
+
+                this.setCustomValidity("Passwords do not match.");
+
+            }
+
+        });
+
+        document.getElementById("registerSuccessBtn").addEventListener("click", () => {
+
+            window.location.href = "login.html";
 
         });
 
     }
 
 });
+
+/*--- Phone Number Validation ---*/
+
+const phoneNumber = document.getElementById("phoneNumber");
+
+if (phoneNumber) {
+
+    phoneNumber.addEventListener("input", function () {
+
+        this.value = this.value.replace(/\D/g, "");
+
+        if (this.value.length > 10) {
+
+            this.value = this.value.slice(0, 10);
+
+        }
+
+    });
+
+}

@@ -1,798 +1,419 @@
-/*--- PANEL JS ---*/
+/*==================== PASSWORD SETTINGS ====================*/
 
-document.addEventListener("DOMContentLoaded", () => {
+/*--- Sidebar Toggle ---*/
 
-    /*--- Elements ---*/
+const sidebar = document.querySelector(".panel-sidebar");
+const sidebarToggle = document.querySelector(".panel-sidebar-toggle");
+const body = document.body;
 
-    const sidebar = document.querySelector(".panel-sidebar");
-    const sidebarToggle = document.querySelector(".panel-sidebar-toggle");
-    const body = document.body;
+/*--- Overlay ---*/
 
-    /*--- Sidebar Overlay ---*/
+let overlay = document.querySelector(".panel-overlay");
 
-    let overlay = document.querySelector(".panel-overlay");
+if (!overlay) {
 
-    if (!overlay) {
+    overlay = document.createElement("div");
 
-        overlay = document.createElement("div");
+    overlay.className = "panel-overlay";
 
-        overlay.className = "panel-overlay";
+    body.appendChild(overlay);
 
-        body.appendChild(overlay);
+}
 
-    }
+/*--- Toggle Sidebar ---*/
 
-    /*--- Sidebar Toggle ---*/
+if (sidebar && sidebarToggle) {
 
-    if (sidebar && sidebarToggle) {
+    sidebarToggle.addEventListener("click", () => {
 
-        sidebarToggle.addEventListener("click", () => {
+        sidebar.classList.toggle("active");
 
-            sidebar.classList.toggle("active");
+        overlay.classList.toggle("active");
 
-            overlay.classList.toggle("active");
+    });
 
-        });
+}
 
-    }
+/*--- Close Sidebar ---*/
 
-    /*--- Overlay Close ---*/
+overlay.addEventListener("click", () => {
 
-    overlay.addEventListener("click", () => {
+    sidebar.classList.remove("active");
+
+    overlay.classList.remove("active");
+
+});
+
+/*--- Desktop Resize ---*/
+
+window.addEventListener("resize", () => {
+
+    if (window.innerWidth > 991) {
 
         sidebar.classList.remove("active");
 
         overlay.classList.remove("active");
 
-    });
+    }
 
-    /*--- Desktop Resize ---*/
+});
 
-    window.addEventListener("resize", () => {
+/*--- Active Menu ---*/
 
-        if (window.innerWidth > 991) {
+const menuLinks = document.querySelectorAll(".panel-menu a");
 
-            sidebar.classList.remove("active");
+const currentPage = window.location.pathname.split("/").pop();
 
-            overlay.classList.remove("active");
+menuLinks.forEach(link => {
+
+    const page = link.getAttribute("href");
+
+    if (page === currentPage) {
+
+        link.classList.add("active");
+
+    }
+
+});
+
+/*--- Password Toggle ---*/
+
+document.querySelectorAll(".panel-password-toggle").forEach((button) => {
+
+    button.addEventListener("click", () => {
+
+        const input = button.previousElementSibling;
+        const icon = button.querySelector("i");
+
+        if (input.type === "password") {
+
+            input.type = "text";
+            icon.classList.replace("bi-eye", "bi-eye-slash");
+
+        } else {
+
+            input.type = "password";
+            icon.classList.replace("bi-eye-slash", "bi-eye");
 
         }
 
     });
 
-    /*--- Active Menu ---*/
+});
 
-    const menuLinks = document.querySelectorAll(".panel-menu a");
+/*--- Change Password Validation ---*/
 
-    const currentPage = window.location.pathname.split("/").pop();
+const currentPassword = document.getElementById("currentPassword");
+const newPassword = document.getElementById("newPassword");
+const confirmPassword = document.getElementById("confirmPassword");
+const changePasswordBtn = document.getElementById("changePasswordBtn");
 
-    menuLinks.forEach(link => {
+if (
+    currentPassword &&
+    newPassword &&
+    confirmPassword &&
+    changePasswordBtn
+) {
 
-        const page = link.getAttribute("href");
+    const passwordPattern =
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&^#()_+\-=[\]{};':"\\|,.<>/?]).{8,}$/;
 
-        if (page === currentPage) {
+    changePasswordBtn.addEventListener("click", () => {
 
-            link.classList.add("active");
+        /*--- Current Password ---*/
+
+        currentPassword.setCustomValidity("");
+
+        if (currentPassword.value.trim() === "") {
+
+            currentPassword.setCustomValidity("Please enter your current password.");
+            currentPassword.reportValidity();
+            currentPassword.focus();
+
+            return;
 
         }
 
-        else {
+        /*--- New Password ---*/
 
-            link.classList.remove("active");
+        newPassword.setCustomValidity("");
+
+        if (newPassword.value.trim() === "") {
+
+            newPassword.setCustomValidity("Please enter a new password.");
+            newPassword.reportValidity();
+            newPassword.focus();
+
+            return;
 
         }
 
-    });
+        if (!passwordPattern.test(newPassword.value)) {
 
-    /*--- Counter Animation ---*/
+            newPassword.setCustomValidity(
+                "Password must contain at least 8 characters, one uppercase letter, one lowercase letter, one number, and one special character."
+            );
 
-    const counters = document.querySelectorAll(".panel-counter");
+            newPassword.reportValidity();
+            newPassword.focus();
 
-    const counterObserver = new IntersectionObserver(entries => {
+            return;
 
-        entries.forEach(entry => {
+        }
 
-            if (entry.isIntersecting) {
+        /*--- Confirm Password ---*/
 
-                const counter = entry.target;
+        confirmPassword.setCustomValidity("");
 
-                const target = Number(counter.dataset.target);
+        if (confirmPassword.value.trim() === "") {
 
-                const duration = 1800;
+            confirmPassword.setCustomValidity("Please confirm your password.");
+            confirmPassword.reportValidity();
+            confirmPassword.focus();
 
-                const step = Math.max(target / (duration / 16), 1);
+            return;
 
-                let current = 0;
+        }
 
-                const update = () => {
+        if (newPassword.value !== confirmPassword.value) {
 
-                    current += step;
+            confirmPassword.setCustomValidity("Passwords do not match.");
+            confirmPassword.reportValidity();
+            confirmPassword.focus();
 
-                    if (current < target) {
+            return;
 
-                        counter.textContent = Math.floor(current);
+        }
 
-                        requestAnimationFrame(update);
+        /*--- Clear Validation ---*/
 
-                    }
+        currentPassword.setCustomValidity("");
+        newPassword.setCustomValidity("");
+        confirmPassword.setCustomValidity("");
 
-                    else {
+        /*--- Success ---*/
 
-                        counter.textContent = target;
+        alert("Password changed successfully!");
 
-                    }
-
-                };
-
-                update();
-
-                counterObserver.unobserve(counter);
-
-            }
-
-        });
-
-    }, { threshold: .5 });
-
-    counters.forEach(counter => {
-
-        counterObserver.observe(counter);
+        currentPassword.value = "";
+        newPassword.value = "";
+        confirmPassword.value = "";
 
     });
 
-    /*--- Reveal Animation ---*/
+    /*--- Clear Validation While Typing ---*/
 
-    if (typeof reveal === "function") {
+    [currentPassword, newPassword, confirmPassword].forEach((input) => {
 
-        reveal(".panel-welcome");
+        input.addEventListener("input", () => {
 
-        reveal(".panel-stat-card");
-
-    }
-
-    /*--- Card Tilt ---*/
-
-    if (typeof cardTilt === "function") {
-
-        cardTilt(".panel-stat-card", 8, 8);
-
-    }
-
-    /*--- Spotlight ---*/
-
-    if (typeof spotlight === "function") {
-
-        spotlight(".panel-stat-card");
-
-        spotlight(".panel-welcome");
-
-    }
-
-    /*--- Search ---*/
-
-    const searchInput = document.querySelector(".panel-search input");
-
-    if (searchInput) {
-
-        searchInput.addEventListener("keyup", () => {
-
-            const keyword = searchInput.value.toLowerCase();
-
-            document.querySelectorAll(".panel-search-item").forEach(item => {
-
-                const text = item.innerText.toLowerCase();
-
-                item.style.display = text.includes(keyword) ? "" : "none";
-
-            });
-
-        });
-
-    }
-
-    /*--- Notification ---*/
-
-    const notificationBtn = document.querySelectorAll(".panel-icon-btn");
-
-    notificationBtn.forEach(button => {
-
-        button.addEventListener("click", () => {
-
-            button.classList.add("active");
-
-            setTimeout(() => {
-
-                button.classList.remove("active");
-
-            }, 250);
+            input.setCustomValidity("");
 
         });
 
     });
 
-    /*--- Theme Ready ---*/
+}
 
-    const themeButton = document.querySelector(".panel-icon-btn:first-child");
+/*--- Revenue Analytics Chart ---*/
 
-    if (themeButton) {
+const revenueChart = document.getElementById("revenueChart");
 
-        themeButton.addEventListener("click", () => {
+if (revenueChart) {
 
-            body.classList.toggle("panel-light");
+    const ctx = revenueChart.getContext("2d");
 
-        });
+    const gradient = ctx.createLinearGradient(0, 0, 0, 350);
 
-    }
+    gradient.addColorStop(0, "rgba(59,130,246,.45)");
+    gradient.addColorStop(.5, "rgba(59,130,246,.15)");
+    gradient.addColorStop(1, "rgba(59,130,246,0)");
 
-    /*--- Revenue Chart ---*/
+    new Chart(ctx, {
 
-    const revenueChart = document.getElementById("revenueChart");
+        type: "line",
 
-    if (revenueChart) {
+        data: {
 
-        const ctx = revenueChart.getContext("2d");
+            labels: [
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+            ],
 
-        const gradient = ctx.createLinearGradient(0, 0, 0, 350);
+            datasets: [{
 
-        gradient.addColorStop(0, "rgba(37,99,235,.45)");
-        gradient.addColorStop(.5, "rgba(59,130,246,.18)");
-        gradient.addColorStop(1, "rgba(37,99,235,0)");
+                label: "Revenue",
 
-        new Chart(ctx, {
-
-            type: "line",
-
-            data: {
-
-                labels: [
-                    "Jan",
-                    "Feb",
-                    "Mar",
-                    "Apr",
-                    "May",
-                    "Jun",
-                    "Jul",
-                    "Aug",
-                    "Sep",
-                    "Oct",
-                    "Nov",
-                    "Dec"
+                data: [
+                    3,
+                    6,
+                    9,
+                    14,
+                    18,
+                    22,
+                    27,
+                    31,
+                    36,
+                    42,
+                    49,
+                    58
                 ],
 
-                datasets: [{
+                fill: true,
 
-                    label: "Revenue",
+                backgroundColor: gradient,
 
-                    data: [
-                        12,
-                        18,
-                        15,
-                        25,
-                        22,
-                        31,
-                        35,
-                        42,
-                        39,
-                        48,
-                        56,
-                        63
-                    ],
+                borderColor: "#3B82F6",
 
-                    fill: true,
+                borderWidth: 4,
 
-                    backgroundColor: gradient,
+                tension: .45,
 
-                    borderColor: "#2563EB",
+                pointRadius: 5,
 
-                    borderWidth: 3,
+                pointHoverRadius: 8,
 
-                    pointRadius: 5,
+                pointBackgroundColor: "#ffffff",
 
-                    pointHoverRadius: 7,
+                pointBorderColor: "#3B82F6",
 
-                    pointBackgroundColor: "#FFFFFF",
+                pointBorderWidth: 3
 
-                    pointBorderColor: "#2563EB",
+            }]
 
-                    pointBorderWidth: 3,
+        },
 
-                    tension: .45
+        options: {
 
-                }]
+            responsive: true,
+
+            maintainAspectRatio: false,
+
+            animation: {
+
+                duration: 1800,
+
+                easing: "easeOutQuart"
 
             },
 
-            options: {
+            interaction: {
 
-                responsive: true,
+                mode: "index",
 
-                maintainAspectRatio: false,
+                intersect: false
 
-                interaction: {
+            },
 
-                    mode: "index",
+            plugins: {
 
-                    intersect: false
+                legend: {
+
+                    display: false
 
                 },
 
-                plugins: {
+                tooltip: {
 
-                    legend: {
+                    backgroundColor: "#111827",
+
+                    titleColor: "#ffffff",
+
+                    bodyColor: "#CBD5E1",
+
+                    borderColor: "#3B82F6",
+
+                    borderWidth: 1,
+
+                    padding: 12,
+
+                    displayColors: false,
+
+                    callbacks: {
+
+                        label: function (context) {
+
+                            return " ₹ " + context.parsed.y + " Lakhs";
+
+                        }
+
+                    }
+
+                }
+
+            },
+
+            scales: {
+
+                x: {
+
+                    grid: {
+
                         display: false
-                    },
-
-                    tooltip: {
-
-                        backgroundColor: "#111827",
-
-                        titleColor: "#FFFFFF",
-
-                        bodyColor: "#CBD5E1",
-
-                        padding: 14,
-
-                        displayColors: false,
-
-                        borderColor: "rgba(255,255,255,.08)",
-
-                        borderWidth: 1
-
-                    }
-
-                },
-
-                scales: {
-
-                    x: {
-
-                        grid: {
-                            display: false
-                        },
-
-                        ticks: {
-                            color: "#94A3B8"
-                        }
 
                     },
 
-                    y: {
+                    ticks: {
 
-                        beginAtZero: true,
+                        color: "#94A3B8",
 
-                        grid: {
-                            color: "rgba(255,255,255,.06)"
-                        },
+                        font: {
 
-                        ticks: {
-                            color: "#94A3B8"
+                            size: 13,
+
+                            weight: "600"
+
                         }
 
                     }
 
                 },
 
-                animation: {
+                y: {
 
-                    duration: 1800,
+                    beginAtZero: true,
 
-                    easing: "easeOutQuart"
+                    suggestedMax: 60,
+
+                    ticks: {
+
+                        stepSize: 10,
+
+                        color: "#94A3B8",
+
+                        callback: function (value) {
+
+                            return value + "L";
+
+                        }
+
+                    },
+
+                    grid: {
+
+                        color: "rgba(255,255,255,.06)",
+
+                        drawBorder: false
+
+                    }
 
                 }
 
             }
-
-        });
-
-    }
-
-    /*--- Analytics Reveal ---*/
-
-    if (typeof reveal === "function") {
-
-        reveal(".panel-card");
-
-    }
-
-    /*--- Analytics Tilt ---*/
-
-    if (typeof cardTilt === "function") {
-
-        cardTilt(".panel-card", 6, 6);
-
-    }
-
-    /*--- Analytics Spotlight ---*/
-
-    if (typeof spotlight === "function") {
-
-        spotlight(".panel-card");
-
-    }
-
-});
-
-/*================= Admin Clients Page =================*/
-
-/*--- Clients Page ---*/
-
-const clientTable = document.querySelector(".panel-table tbody");
-const clientRows = document.querySelectorAll(".panel-table tbody tr");
-
-const clientSearch = document.getElementById("clientSearch");
-const statusFilter = document.getElementById("statusFilter");
-const companyFilter = document.getElementById("companyFilter");
-
-/*--- Search ---*/
-
-if (clientSearch) {
-
-    clientSearch.addEventListener("keyup", function () {
-
-        const value = this.value.toLowerCase();
-
-        clientRows.forEach(function (row) {
-
-            const text = row.innerText.toLowerCase();
-
-            row.style.display = text.includes(value) ? "" : "none";
-
-        });
-
-    });
-
-}
-
-/*--- Status Filter ---*/
-
-if (statusFilter) {
-
-    statusFilter.addEventListener("change", filterClients);
-
-}
-
-/*--- Company Filter ---*/
-
-if (companyFilter) {
-
-    companyFilter.addEventListener("change", filterClients);
-
-}
-
-function filterClients() {
-
-    clientRows.forEach(function (row) {
-
-        const status = row.querySelector(".panel-badge").innerText.trim().toLowerCase();
-
-        const company = row.children[1].innerText.trim().toLowerCase();
-
-        const selectedStatus = statusFilter.value.toLowerCase();
-        const selectedCompany = companyFilter.value.toLowerCase();
-
-        const statusMatch =
-            selectedStatus === "all status" ||
-            status === selectedStatus;
-
-        const companyMatch =
-            selectedCompany === "all companies" ||
-            company.includes(selectedCompany);
-
-        row.style.display = statusMatch && companyMatch ? "" : "none";
-
-    });
-
-}
-
-/*--- Delete Client ---*/
-
-document.querySelectorAll(".panel-action-btn.delete").forEach(function (btn) {
-
-    btn.addEventListener("click", function () {
-
-        const row = this.closest("tr");
-
-        const client = row.querySelector("h6").innerText;
-
-        const confirmDelete = confirm("Delete " + client + " ?");
-
-        if (confirmDelete) {
-
-            row.style.transition = ".35s";
-
-            row.style.opacity = "0";
-
-            row.style.transform = "translateX(40px)";
-
-            setTimeout(function () {
-
-                row.remove();
-
-            }, 350);
 
         }
 
     });
 
-});
 
-/*--- View Client ---*/
-
-document.querySelectorAll(".panel-action-btn.view").forEach(function (btn) {
-
-    btn.addEventListener("click", function () {
-
-        const client = this.closest("tr").querySelector("h6").innerText;
-
-        alert("Viewing " + client);
-
-    });
-
-});
-
-/*--- Edit Client ---*/
-
-document.querySelectorAll(".panel-action-btn.edit").forEach(function (btn) {
-
-    btn.addEventListener("click", function () {
-
-        const client = this.closest("tr").querySelector("h6").innerText;
-
-        alert("Editing " + client);
-
-    });
-
-});
-
-/*--- Row Animation ---*/
-
-const observer = new IntersectionObserver(function (entries) {
-
-    entries.forEach(function (entry) {
-
-        if (entry.isIntersecting) {
-
-            entry.target.style.opacity = "1";
-            entry.target.style.transform = "translateY(0)";
-
-        }
-
-    });
-
-}, {
-    threshold: .15
-});
-
-clientRows.forEach(function (row) {
-
-    row.style.opacity = "0";
-    row.style.transform = "translateY(25px)";
-    row.style.transition = ".5s ease";
-
-    observer.observe(row);
-
-});
-
-/*--- Pagination Demo ---*/
-
-document.querySelectorAll(".panel-page-btn").forEach(function (btn) {
-
-    btn.addEventListener("click", function (e) {
-
-        e.preventDefault();
-
-        document.querySelectorAll(".panel-page-btn").forEach(function (item) {
-
-            item.classList.remove("active");
-
-        });
-
-        if (this.innerText.trim() !== "" && !this.querySelector("i")) {
-
-            this.classList.add("active");
-
-        }
-
-    });
-
-});
-
-/*==================== Admin Messages ====================*/
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    /*--- Conversation Switch ---*/
-
-    const messageItems = document.querySelectorAll(".panel-message-item");
-
-    messageItems.forEach(item => {
-
-        item.addEventListener("click", () => {
-
-            messageItems.forEach(card => card.classList.remove("active"));
-
-            item.classList.add("active");
-
-            const unread = item.querySelector(".panel-unread-count");
-
-            if (unread) {
-
-                unread.remove();
-
-            }
-
-        });
-
-    });
-
-    /*--- Message Search ---*/
-
-    const searchInput = document.getElementById("messageSearch");
-
-    if (searchInput) {
-
-        searchInput.addEventListener("keyup", function () {
-
-            const value = this.value.toLowerCase();
-
-            messageItems.forEach(item => {
-
-                item.style.display = item.innerText.toLowerCase().includes(value)
-                    ? ""
-                    : "none";
-
-            });
-
-        });
-
-    }
-
-    /*--- Status Filter ----*/
-
-    const statusFilter = document.getElementById("messageStatus");
-
-    if (statusFilter) {
-
-        statusFilter.addEventListener("change", function () {
-
-            const value = this.value;
-
-            messageItems.forEach(item => {
-
-                const unread = item.querySelector(".panel-unread-count");
-
-                if (value === "All Status") {
-
-                    item.style.display = "";
-
-                }
-
-                else if (value === "Unread") {
-
-                    item.style.display = unread ? "" : "none";
-
-                }
-
-                else if (value === "Read") {
-
-                    item.style.display = unread ? "none" : "";
-
-                }
-
-                else {
-
-                    item.style.display = "";
-
-                }
-
-            });
-
-        });
-
-    }
-
-    /*--- Priority Filter ---*/
-
-    const priorityFilter = document.getElementById("messagePriority");
-
-    if (priorityFilter) {
-
-        priorityFilter.addEventListener("change", function () {
-
-            console.log("Priority :", this.value);
-
-        });
-
-    }
-
-    /*--- Reply Validation ---*/
-
-    const sendBtn = document.querySelector(".panel-message-reply .panel-primary-btn");
-
-    const replyBox = document.querySelector(".panel-reply-input");
-
-    if (sendBtn && replyBox) {
-
-        sendBtn.addEventListener("click", () => {
-
-            const message = replyBox.value.trim();
-
-            if (message === "") {
-
-                alert("Please enter your reply.");
-
-                replyBox.focus();
-
-                return;
-
-            }
-
-            alert("Reply sent successfully.");
-
-            replyBox.value = "";
-
-        });
-
-    }
-
-    /*--- Cancel Reply ---*/
-
-    const cancelBtn = document.querySelector(".panel-outline-btn");
-
-    if (cancelBtn && replyBox) {
-
-        cancelBtn.addEventListener("click", () => {
-
-            replyBox.value = "";
-
-            replyBox.focus();
-
-        });
-
-    }
-
-    /*--- Header Actions ----*/
-
-    const archiveBtn = document.querySelector(".panel-message-actions .bi-archive");
-
-    if (archiveBtn) {
-
-        archiveBtn.parentElement.addEventListener("click", () => {
-
-            alert("Message archived.");
-
-        });
-
-    }
-
-    const starBtn = document.querySelector(".panel-message-actions .bi-star");
-
-    if (starBtn) {
-
-        starBtn.parentElement.addEventListener("click", () => {
-
-            starBtn.classList.toggle("bi-star");
-
-            starBtn.classList.toggle("bi-star-fill");
-
-        });
-
-    }
-
-    const deleteBtn = document.querySelector(".panel-message-actions .delete");
-
-    if (deleteBtn) {
-
-        deleteBtn.addEventListener("click", () => {
-
-            if (confirm("Delete this message?")) {
-
-                alert("Message deleted.");
-
-            }
-
-        });
-
-    }
-
-});
+}

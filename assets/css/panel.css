@@ -2741,6 +2741,8 @@ ul {
     transform: translateY(-2px);
 }
 
+
+
 /*--- Toolbar Buttons ---*/
 
 .panel-reply-tools .panel-action-btn {
@@ -7798,18 +7800,6 @@ margin-left:auto;
 
 }
 
-/*--- Desktop Button Alignment ---*/
-
-@media(min-width:992px){
-
-    .panel-card .panel-primary-btn{
-
-        min-width:240px;
-
-    }
-
-}
-
 /*--- Mobile ---*/
 
 @media(max-width:991px){
@@ -7823,3 +7813,35 @@ margin-left:auto;
     }
 
 }
+
+/*/
+/*--- Project Card ---*/
+
+.panel-project-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    height:100%;
+
+}
+
+/*--- View Details Button ---*/
+
+.panel-project-card > a{
+
+    margin-top:auto;
+
+    display:block;
+
+}
+
+.panel-project-card > a .panel-primary-btn{
+
+    width:100%;
+
+}
+
+
+/**/
