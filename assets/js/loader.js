@@ -24,19 +24,19 @@
 
     /*--- Hide Loader ---*/
 
-    function hideLoader() {
+ function hideLoader() {
 
-        setTimeout(() => {
+    setTimeout(() => {
 
-            loader.classList.add("site-loader-hide");
+        loader.classList.add("site-loader-hide");
 
-            loader.style.opacity = "0";
+        loader.style.opacity = "0";
 
-            loader.style.visibility = "hidden";
+        loader.style.visibility = "hidden";
 
-        }, LOADER_DELAY);
+    }, 8000); // 8 seconds
 
-    }
+}
 
     /*--- Initial Load ---*/
 
